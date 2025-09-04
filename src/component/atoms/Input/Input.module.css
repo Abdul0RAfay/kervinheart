@@ -1,0 +1,121 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.labelText {
+  color: var(--white-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 12px;
+}
+
+.inputBox {
+  height: 46px;
+  padding-inline: 16px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.noBorder {
+  border: none;
+}
+
+.inputPassContainer {
+  width: 100%;
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+}
+
+.inputPassContainer input {
+  font-size: 16px;
+  color: var(--white-color);
+  border-radius: inherit;
+  background-color: inherit;
+  font-weight: 400;
+}
+
+.inputPassContainer input:disabled {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.inputPassContainer input::placeholder {
+  color: var(--placeholder-color) !important;
+  padding-left: 0px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inputPassContainer .passwordIcon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  color: #cacaca;
+}
+
+.errorText {
+  color: var(--error-v1);
+}
+
+.leftIconBox {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  bottom: 45%;
+  transform: translateY(-50%);
+  height: max-content;
+}
+.rightIconBox {
+  position: absolute;
+  /* left: 97%;
+   */
+  right: 10px;
+  top: 50%;
+  bottom: 45%;
+  transform: translateY(-50%);
+  height: max-content;
+}
+
+.inputBox ::-webkit-outer-spin-button,
+.inputBox ::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputBox:focus {
+  outline: none;
+}
+/*  Firefox  */
+.inputBox[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 991px) {
+  .labelText {
+    font-size: 17px;
+  }
+  .inputPassContainer input {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .labelText {
+    font-size: 16px;
+  }
+  .inputPassContainer input {
+    font-size: 14px;
+  }
+  .inputBox {
+    padding: 15px 10px;
+  }
+}
