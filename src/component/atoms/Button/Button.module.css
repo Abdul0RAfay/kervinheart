@@ -7,6 +7,11 @@
   border-radius: 10px;
   height: 41px;
   padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
 }
 
 .btn:disabled {
@@ -21,13 +26,27 @@
 }
 
 .btn[color-variant="primary"] {
-  background: var(--button-primary);
+  background: var(--primary-bg-button);
   color: var(--white-color);
+  border: none;
 }
+
+.btn[color-variant="primary"]:hover {
+  opacity: 0.9;
+}
+
 .btn[color-variant="secondary"] {
-  background: var(--button-secondary);
-  color: var(--white-color);
+  background: var(--white-color);
+  color: #374151;
+  border: 1px solid #D1D5DB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+.btn[color-variant="secondary"]:hover {
+  background: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
 .btn[color-variant="danger"] {
   background: var(--button-danger);
   color: var(--light-red);
