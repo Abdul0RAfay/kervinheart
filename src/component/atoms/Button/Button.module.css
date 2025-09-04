@@ -1,0 +1,52 @@
+.btn {
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s all;
+  border-radius: 10px;
+  height: 41px;
+  padding: 0px 20px;
+}
+
+.btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.label {
+  margin: 0px 5px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.btn[color-variant="primary"] {
+  background: var(--button-primary);
+  color: var(--white-color);
+}
+.btn[color-variant="secondary"] {
+  background: var(--button-secondary);
+  color: var(--white-color);
+}
+.btn[color-variant="danger"] {
+  background: var(--button-danger);
+  color: var(--light-red);
+}
+
+@media screen and (max-width: 767px) {
+  .btn {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .btn {
+    padding: 14px 25px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .btn {
+    padding: 12px 20px;
+  }
+}

@@ -1,12 +1,13 @@
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/globals.css";
 import "./css/typography.css";
 import "./css/colors.css";
 import { ToastContainer } from "react-toastify";
+import { CustomProvider } from "@/store/customProvider";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -19,9 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}>
-        {/* <ToastContainer /> */}
+      <body className={`${inter.variable}`}>
+        <CustomProvider>
+        <ToastContainer />
         {children}
+        </CustomProvider>
       </body>
     </html>
   );
