@@ -10,6 +10,7 @@ import useAxios from "@/interceptor/axiosInterceptor";
 import { useState } from "react";
 import Input from "@/component/atoms/Input/Input";
 import Button from "@/component/atoms/Button";
+import RenderToast from "@/component/atoms/RenderToast";
 
 const LoginTemplate = () => {
   const router = useRouter();
@@ -27,6 +28,10 @@ const LoginTemplate = () => {
 
   const handleSubmit = async (values) => {
     console.log("values", values);
+    RenderToast({
+      type: "success",
+      message: "Login successful! Welcome back.",
+    });
   };
 
   return (
