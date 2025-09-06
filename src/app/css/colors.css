@@ -4,24 +4,20 @@
   --black-color: #000000;
 
   --primary-color: #444374;
- 
+
   --placeholder-color: #aeb5b7;
   --text-color: #585788;
   --text-color-v2: #cbcbcb;
- 
+
   --dark-red: rgba(203, 0, 0, 0.16);
- 
+  --accent-color: #5e5ccc;
   --border-color: #626262;
   --input-border: rgba(255, 255, 255, 0.48);
   --table-border-color: #5d5e64;
   --error-v1: red;
   --delete-color: #cf000a;
- 
+
   --gray-400: #cccbcd;
 
-
-  --primary-bg-button: linear-gradient(90deg, #5E5CCC 0%, #9694E5 100%);
-
-  
-
+  --primary-bg-button: linear-gradient(90deg, #5e5ccc 0%, #9694e5 100%);
 }

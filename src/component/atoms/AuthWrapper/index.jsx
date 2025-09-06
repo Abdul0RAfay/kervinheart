@@ -6,14 +6,20 @@ const AuthWrapper = ({ children, title, description, image }) => {
     <div className={classes.authWrapper}>
         <div className={classes.authWrapperLeft}>
             <div className={classes.authWrapperLeftContent}>
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <div className={classes.logoDiv}>
+                  <Image src={"/images/app-images/logo.png"} alt="logo" fill/>
+                </div>
+                <h1 className="fs-45 fw-700" >{title}</h1>
+                <p className='fs-20 fw-400' >{description}</p>
                 </div>
                 <div className={classes.authWrapperLeftImage}>
-            <Image src={image} alt="logo" fill/>
-            </div>
+                  <Image src={image} alt="logo" fill/>
+                </div>
         </div>
         <div className={classes.authWrapperRight}>
+                <div className={classes.logoDivMobile}>
+                  <Image src={"/images/app-images/logo.png"} alt="logo" fill/>
+                </div>
             {children}
         </div>
     </div>
