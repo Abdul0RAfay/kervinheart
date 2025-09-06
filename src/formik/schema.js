@@ -21,6 +21,32 @@ export const resetPasswordSchema = Yup.object({
 });
 
 
+export const signupSchema = Yup.object({
+  fullName: Yup.string()
+    .min(2, "Full name must be at least 2 characters")
+    .required("Full name is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
+      "Password must contain uppercase, lowercase, number and special character"
+    )
+    .required("Password is required"),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password")], "Passwords must match")
+    .required("Confirm password is required"),
+});
+
+export const verifyOTPSchema = Yup.object({
+  otp1: Yup.string().required("Required"),
+  otp2: Yup.string().required("Required"),
+  otp3: Yup.string().required("Required"),
+  otp4: Yup.string().required("Required"),
+  otp5: Yup.string().required("Required"),
+  otp6: Yup.string().required("Required"),
+});
+
 export const profilePasswordSchema = Yup.object().shape({
   currentPassword: Yup.string()
     .required("Current password is required")

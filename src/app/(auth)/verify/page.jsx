@@ -1,11 +1,8 @@
 import React from 'react'
+import VerifyOTPTemplate from '@/component/Templates/Auth/VerifyOTPTemplate'
 
 const verifyPage = () => {
-  return (
-    <div>
-      <h1>Verify</h1>
-    </div>
-  )
+  return <VerifyOTPTemplate />
 }
 
 export default verifyPage

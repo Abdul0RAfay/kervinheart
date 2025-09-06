@@ -1,11 +1,8 @@
 import React from 'react'
+import ForgotPasswordTemplate from '@/component/Templates/Auth/ForgotPasswordTemplate'
 
 const forgotPasswordPage = () => {
-  return (
-    <div>
-      <h1>Forgot Password</h1>
-    </div>
-  )
+  return <ForgotPasswordTemplate />
 }
 
 export default forgotPasswordPage

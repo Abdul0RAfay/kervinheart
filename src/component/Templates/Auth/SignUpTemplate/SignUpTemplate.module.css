@@ -1,0 +1,130 @@
+.signupCard {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 14px 54px 10px #9fb3d999;
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formTitle {
+  color: #444374;
+  text-align: center;
+}
+
+.termsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.agreeToTerms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-color);
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.checkboxLabel {
+  font-size: 0.9rem;
+  color: #585788;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.termsLink {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.termsLink:hover {
+  color: #444374;
+}
+
+.separator {
+  position: relative;
+  text-align: center;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.separatorText {
+  background: white;
+  padding: 0 1rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
+
+.loginLink {
+  text-align: center;
+}
+
+.loginLink p {
+  font-size: 0.9rem;
+  color: #585788;
+  margin: 0;
+}
+
+.loginText {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.loginText:hover {
+  color: #444374;
+}
+
+@media (max-width: 768px) {
+  .signupCard {
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .signupCard {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .signupForm {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .termsRow {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+}
