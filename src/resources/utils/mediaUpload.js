@@ -1,5 +1,4 @@
 "use client";
-import useAxios from "@/interceptor/axiosInterceptor";
 
 // export const getSupportedImageTypes = (type = "all") => {
 //   if (type === "all") {
@@ -119,9 +118,8 @@ export const getMediaType = (file) => {
   return "photo";
 };
 
-export const uploadImages = async (images) => {
+export const uploadImages = async (images, Post) => {
   if (!images.length) return null;
-  const { Post } = useAxios();
   const formData = new FormData();
   images.forEach((image) => {
     formData.append(getMediaType(image), image);
@@ -146,11 +144,12 @@ export const uploadImagesHelper = async ({
   loadingType,
   setMedia,
   token,
+  Post,
 }) => {
   if (images.length === 0) return [];
 
   setIsLoading(loadingType);
-  uploadImages(images, token)
+  uploadImages(images, Post)
     .then((res) => {
       if (res) {
         setMedia(res);

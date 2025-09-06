@@ -4,7 +4,7 @@ import CryptoJS from "crypto-js";
 import axios from "axios";
 import { toast } from "react-toastify";
 import config from "@/config";
-import useAxios from "@/interceptor/axiosInterceptor";
+// import useAxios from "@/interceptor/axiosInterceptor";
 
 // export const downloadFileUrl =
 //   "https://www.dropbox.com/scl/fi/fvfz25arw0vq99xis2v9g/AthleteRaceINFO.pdf?rlkey=2dzbihw3uupnw15fl0ddsvfjd&e=1&dl=0";
@@ -133,9 +133,9 @@ export const handleDecrypt = (encryptedMessage = "") => {
 
 const ACCESS_TOKEN_SECRET = "t2qckOEgV88Gp";
 
-export const uploadImages = async (images, token) => {
+export const uploadImages = async (images, token, Post) => {
   if (!images.length) return null;
-  const { Post } = useAxios();
+  // const { Post } = useAxios();
   const formData = new FormData();
   images.forEach((image) => {
     formData.append("photos", image);
@@ -159,10 +159,11 @@ export const uploadImagesHelper = async ({
   setIsLoading,
   setImages,
   token,
+  Post,
 }) => {
   if (images.length === 0) return;
   setIsLoading(true);
-  uploadImages(images, token)
+  uploadImages(images, token, Post)
     .then((res) => {
       if (res) {
         setImages((prev) => [...prev, ...res]);
@@ -181,8 +182,8 @@ export const deleteMedia = async ({
   token,
   setImages,
   entity,
+  Patch,
 }) => {
-  const { Patch } = useAxios();
   const url = baseURL("media/delete");
   const params = { slug: slug, key, type: "image", entity };
   setIsLoading(true);

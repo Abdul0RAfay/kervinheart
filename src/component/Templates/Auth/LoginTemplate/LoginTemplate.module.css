@@ -1,0 +1,114 @@
+.loginCard {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+  /* margin-inline: 0 auto; */
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #444374;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.optionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #5e5ccc;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 0.9rem;
+  color: #585788;
+  cursor: pointer;
+}
+
+.forgotPassword {
+  font-size: 0.9rem;
+  color: #5e5ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: #444374;
+}
+
+.separator {
+  position: relative;
+  text-align: center;
+  /* margin: 1.5rem 0; */
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.separatorText {
+  background: white;
+  padding: 0 1rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
+
+.signupLink {
+  text-align: center;
+}
+
+.signupLink p {
+  font-size: 0.9rem;
+  color: #585788;
+  margin: 0;
+}
+
+.signupText {
+  color: #5e5ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.signupText:hover {
+  color: #444374;
+}
