@@ -1,0 +1,58 @@
+.quickActions {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  border: 1px solid #f0f0f0;
+}
+
+.quickActions h3 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.actionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  background: #f8f9ff;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+  min-height: 100px;
+  border: 1px solid #e8e6ff;
+}
+
+.actionButton:hover {
+  background: #f0f0ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.15);
+  border-color: #d1c7ff;
+}
+
+.actionIcon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.actionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  color: #1a1a1a;
+  letter-spacing: -0.2px;
+}

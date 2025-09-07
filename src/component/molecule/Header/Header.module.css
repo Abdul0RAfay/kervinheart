@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.logo {
+  position: relative;
+  width: 35px;
+  height: 48px;
+}
+
+.logoParent {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greet {
+  color: var(--primary-color);
+  text-transform: capitalize;
+}

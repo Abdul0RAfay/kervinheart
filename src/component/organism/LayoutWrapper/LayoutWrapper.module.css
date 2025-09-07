@@ -1,0 +1,52 @@
+.child {
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 20px 0px 20px 30px;
+}
+
+.subChild {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  gap: 50px;
+}
+
+.children {
+  padding: 30px 20px 0px;
+  flex: 1;
+  overflow: auto;
+  position: relative;
+  flex: 1;
+}
+
+.contentBody {
+  height: calc(100vh - 145px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.children::-webkit-scrollbar {
+  width: 5px;
+}
+
+.children::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}

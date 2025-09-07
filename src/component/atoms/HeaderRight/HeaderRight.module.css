@@ -1,0 +1,83 @@
+.profile {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.profileImage {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+.arrow {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+}
+.profileParent {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.profileDetails h4 {
+  margin-bottom: 0px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 13.396px;
+}
+.profileDetails p {
+  margin-bottom: 0px;
+  color: var(--black-color);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.137px; /* 159.475% */
+  opacity: 0.5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.notificationIcon {
+  cursor: pointer;
+}
+
+.notificationsPopover {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  width: 521px;
+  height: 500px;
+  padding: 24px;
+  z-index: 100;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 20px 0px 20px 20px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.16) 100%
+    ),
+    linear-gradient(180deg, #0e2731 0%, #0e0f17 100%), rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(4px);
+}
+
+.notificationsHeader {
+  padding: 12px 15px;
+}
+
+.notificationsList {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 5px 0;
+  padding-inline-end: 10px;
+}

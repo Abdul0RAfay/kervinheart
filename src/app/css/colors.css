@@ -4,6 +4,9 @@
   --black-color: #000000;
 
   --primary-color: #444374;
+  --dark-purple: #444374;
+  --light-purple: #f3f2ff;
+  --purple-accent: #8b5cf6;
 
   --placeholder-color: #aeb5b7;
   --text-color: #585788;
@@ -18,6 +21,7 @@
   --delete-color: #cf000a;
 
   --gray-400: #cccbcd;
+  --separator-color: #e5e7eb;
 
   --primary-bg-button: linear-gradient(90deg, #5e5ccc 0%, #9694e5 100%);
 }
