@@ -3,7 +3,7 @@
 body {
   font-family: "Inter", sans-serif;
   /* background: #F4F5FA; */
-  background: #e9ecff;
+  background: #f4f5fa;
   color: var(--primary-color);
 }
 
@@ -67,6 +67,39 @@ span {
 }
 
 /* scroll bar */
+
+.op-05 {
+  opacity: 0.5;
+}
+
+.op-08 {
+  opacity: 0.8;
+}
+
+/* color class */
+.primary-color {
+  color: var(--primary-color);
+}
+
+.text-color {
+  color: var(--text-color);
+}
+
+.white-color {
+  color: var(--white-color);
+}
+
+.black-color {
+  color: var(--black-color);
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.error-color {
+  color: var(--error-v1);
+}
 
 .wbbw {
   word-break: break-word;

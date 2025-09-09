@@ -33,7 +33,7 @@ const QuickJournalEntry = ({
             onChange={(e) => setEntry(e.target.value)}
             placeholder={placeholder}
             className={styles.journalInput}
-            rows={4}
+            rows={2}
           />
           <div className={styles.inputIcon}>📝</div>
         </div>

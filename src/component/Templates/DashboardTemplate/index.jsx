@@ -26,54 +26,15 @@ const DashboardTemplate = () => {
       <Container fluid>
         {/* First Row */}
         <Row>
-    <Col md={4}>
+          <Col md={5}>
+          <div className={styles.leftCol}>
             <SessionCard 
               coachName="Kervin Heart"
               coachTitle="Mediation Coach"
               sessionTime="12:00 PM EST"
               isAddedToCalendar={true}
             />
-          </Col>
-          <Col md={4}>
-            <QuickJournalEntry 
-              question="What's on your mind today?"
-              placeholder="Type anything..."
-              onSubmit={handleJournalSubmit}
-            />
-            </Col>
-            <Col md={4}>
-            <QuickActions 
-              actions={[
-                {
-                  id: 1,
-                  icon: '▶️',
-                  title: 'Start Meditation',
-                  link: '/meditation'
-                },
-                {
-                  id: 2,
-                  icon: '💬',
-                  title: 'Message Coach',
-                  link: '/messages'
-                },
-                {
-                  id: 3,
-                  icon: '👥',
-                  title: 'Join Group Session',
-                  link: '/group-session'
-                }
-              ]}
-            />
-          </Col>
-
-         
-        
-        </Row>
-
-        {/* Second Row */}
-        <Row>
-        <Col md={4}>
-            <CourseProgress 
+             <CourseProgress 
               completionPercentage={40}
               progressItems={[
                 { label: 'Progress', percentage: 20, color: '#6c5ce7' },
@@ -81,17 +42,53 @@ const DashboardTemplate = () => {
                 { label: 'Status', percentage: 10.5, color: '#2f3542' }
               ]}
             />
-        
             <StressRelease 
               title="10-Minute Stress Release"
               description="Unwind and release tension with this calming guided meditation."
               onPlay={handleMeditationPlay}
             />
+            </div>
           </Col>
-          
-          <Col md={8}>
+          <Col md={7}>
+            <div className={styles.rightCol}>
+            <div className={styles.rightColHead}>
+              <QuickJournalEntry 
+                question="What's on your mind today?"
+                placeholder="Type anything..."
+                onSubmit={handleJournalSubmit}
+              />
+            
+              <QuickActions 
+                actions={[
+                  {
+                    id: 1,
+                    icon: '▶️',
+                    title: 'Start Meditation',
+                    link: '/meditation'
+                  },
+                  {
+                    id: 2,
+                    icon: '💬',
+                    title: 'Message Coach',
+                    link: '/messages'
+                  },
+                  {
+                    id: 3,
+                    icon: '👥',
+                    title: 'Join Group Session',
+                    link: '/group-session'
+                  }
+                ]}
+              />
+              </div>
             <AssignmentList />
+            </div>
           </Col>
+
+         
+        
+       
+          
         </Row>
       </Container>
     </div>
