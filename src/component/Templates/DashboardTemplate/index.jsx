@@ -26,7 +26,7 @@ const DashboardTemplate = () => {
       <Container fluid>
         {/* First Row */}
         <Row>
-          <Col md={5}>
+          <Col md={4}>
           <div className={styles.leftCol}>
             <SessionCard 
               coachName="Kervin Heart"
@@ -39,7 +39,7 @@ const DashboardTemplate = () => {
               progressItems={[
                 { label: 'Progress', percentage: 20, color: '#6c5ce7' },
                 { label: 'Summary', percentage: 9.5, color: '#3742fa' },
-                { label: 'Status', percentage: 10.5, color: '#2f3542' }
+                { label: 'Status', percentage: 10.5, color: '#DFDDFF' }
               ]}
             />
             <StressRelease 
@@ -49,7 +49,7 @@ const DashboardTemplate = () => {
             />
             </div>
           </Col>
-          <Col md={7}>
+          <Col md={8}>
             <div className={styles.rightCol}>
             <div className={styles.rightColHead}>
               <QuickJournalEntry 

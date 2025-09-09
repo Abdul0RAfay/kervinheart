@@ -38,22 +38,7 @@ const AssignmentList = ({
       status: 'submitted',
       type: 'submitted'
     },
-    {
-      id: 5,
-      title: 'Feedback on Progress',
-      description: 'Reflect on the progress made towards the goals set in the initial worksheet.',
-      dueDate: '10/01/2025',
-      status: 'pending',
-      type: 'pending'
-    },
-    {
-      id: 6,
-      title: 'Stress Trigger Log',
-      description: 'Capture 5 stress events, triggers, and coping responses.',
-      dueDate: '10/01/2025',
-      status: 'submitted',
-      type: 'submitted'
-    }
+   
   ]
 }) => {
   const [activeTab, setActiveTab] = useState('all');

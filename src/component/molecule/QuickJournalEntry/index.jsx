@@ -20,8 +20,6 @@ const QuickJournalEntry = ({
 
   return (
     <div className={styles.quickJournal}>
-      <h3>Quick Journal Entry</h3>
-      
       <div className={styles.question}>
         {question}
       </div>
@@ -33,18 +31,18 @@ const QuickJournalEntry = ({
             onChange={(e) => setEntry(e.target.value)}
             placeholder={placeholder}
             className={styles.journalInput}
-            rows={2}
+            rows={1}
           />
           <div className={styles.inputIcon}>📝</div>
         </div>
         
-        <button 
+        {/* <button 
           type="submit" 
           className={styles.submitButton}
           disabled={!entry.trim()}
         >
           Save Entry
-        </button>
+        </button> */}
       </form>
     </div>
   );

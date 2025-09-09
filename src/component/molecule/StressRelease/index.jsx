@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './StressRelease.module.css';
+import Button from '@/component/atoms/Button';
+import Image from 'next/image';
 
 const StressRelease = ({ 
   title = "10-Minute Stress Release",
@@ -9,22 +11,25 @@ const StressRelease = ({
 }) => {
   return (
     <div className={styles.stressRelease}>
+      <div className={styles.meditation}>
       <div className={styles.meditationImage}>
-        <img src={imageUrl} alt="Meditation" />
+        <Image fill src={imageUrl} alt="Meditation" />
       </div>
       
       <div className={styles.content}>
         <h4 className={styles.title}>{title}</h4>
         <p className={styles.description}>{description}</p>
-        
-        <button 
+      </div>
+      </div>
+
+      <Button 
           className={styles.playButton}
           onClick={onPlay}
-        >
-          <span className={styles.playIcon}>▶️</span>
-          <span>Play Now</span>
-        </button>
-      </div>
+          variant={"primary"}
+          leftIcon={"▶️"}
+        label={"Play Now"}
+        />
+         
     </div>
   );
 };
