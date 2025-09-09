@@ -25,7 +25,6 @@ const QuickActions = ({
 }) => {
   return (
     <div className={styles.quickActions}>
-      <h3>Quick Actions</h3>
       
       <div className={styles.actionsGrid}>
         {actions.map((action) => (

@@ -1,7 +1,7 @@
 .assignmentList {
   background: white;
   border-radius: 16px;
-  padding: 24px;
+  padding: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin-bottom: 24px;
   border: 1px solid #f0f0f0;
@@ -22,11 +22,9 @@
 }
 
 .assignmentItem {
-  border: 1px solid #e8e6ff;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   transition: all 0.3s;
-  background: #fafbff;
 }
 
 .assignmentItem:hover {
@@ -39,7 +37,7 @@
 .assignmentHeader {
   display: flex;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 3px;
 }
 
 .statusIcon {

@@ -3,6 +3,18 @@
   padding-left: 0;
   padding-right: 0;
 }
+.rightCol,
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightColHead {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
 
 /* Add margin between rows */
 .dashboard :global(.row) {

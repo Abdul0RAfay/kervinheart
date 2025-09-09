@@ -1,10 +1,10 @@
 .quickJournal {
   background: white;
   border-radius: 16px;
-  padding: 24px;
+  padding: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 24px;
   border: 1px solid #f0f0f0;
+  width: 400px;
 }
 
 .quickJournal h3 {
@@ -35,13 +35,12 @@
 
 .journalInput {
   width: 100%;
-  padding: 16px 50px 16px 16px;
+  padding: 10px;
   border: 2px solid #e8e6ff;
   border-radius: 12px;
   font-size: 15px;
   font-family: inherit;
   resize: vertical;
-  min-height: 100px;
   transition: all 0.3s;
   background: #fafbff;
   color: #1a1a1a;
