@@ -22,7 +22,7 @@ const LayoutWrapper = ({ children }) => {
                   className={mergeClass("cp", classes?.logo)}
                   onClick={() => router.push("/")}
                 >
-                  <Image fill src={"/images/app-images/Logo.png"} alt="logo" />
+                  <Image fill src={"images/app-images/Logo.png"} alt="logo" />
                 </div>
                 
               </div>
