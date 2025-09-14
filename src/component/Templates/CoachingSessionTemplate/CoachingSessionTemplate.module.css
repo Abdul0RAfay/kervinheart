@@ -9,3 +9,10 @@
   color: #333;
   margin-bottom: 30px;
 }
+
+.bookingSection {
+  margin-top: 24px;
+  padding: 20px;
+  border-top: 1px solid #e2e8f0;
+  background-color: white;
+}

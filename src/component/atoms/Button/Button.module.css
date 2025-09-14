@@ -38,18 +38,44 @@
 .btn[color-variant="secondary"] {
   background: var(--white-color);
   color: #374151;
-  border: 1px solid #D1D5DB;
+  border: 1px solid #d1d5db;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn[color-variant="secondary"]:hover {
-  background: #F9FAFB;
-  border-color: #9CA3AF;
+  background: #f9fafb;
+  border-color: #9ca3af;
 }
 
 .btn[color-variant="danger"] {
   background: var(--button-danger);
   color: var(--light-red);
+}
+
+.btn[color-variant="primary"] {
+  background: #6f42c1;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(111, 66, 193, 0.2);
+}
+
+.btn[color-variant="primary"]:hover {
+  background: #5a359a;
+  box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn[color-variant="secondary"] {
+  background: #ffffff;
+  color: #6c757d;
+  border: 2px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.btn[color-variant="secondary"]:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+  color: #495057;
 }
 
 @media screen and (max-width: 767px) {

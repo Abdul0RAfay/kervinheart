@@ -14,8 +14,8 @@
 }
 
 .coachingSessionCard.selected {
-  border: 2px solid #4a5568;
-  box-shadow: 0 4px 16px rgba(74, 85, 104, 0.2);
+  background: linear-gradient(90deg, #e8eaff 0%, #fcfeff 100%);
+  border: 1.5px solid #7782f7;
 }
 
 .cardContent {

@@ -17,7 +17,7 @@
   height: 48px;
   padding-inline: 16px;
   width: 100%;
-  border: 1px solid #D1D5DB;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   background: white;
   color: #374151;
@@ -27,12 +27,12 @@
 
 .inputBox:focus {
   outline: none;
-  border-color: #5E5CCC;
+  border-color: #5e5ccc;
   box-shadow: 0 0 0 3px rgba(94, 92, 204, 0.1);
 }
 
 .inputBox::placeholder {
-  color: #9CA3AF;
+  color: #9ca3af;
   font-size: 14px;
 }
 
@@ -45,13 +45,13 @@
   display: flex;
   position: relative;
   border-radius: 8px;
-  border: 1px solid #D1D5DB;
+  /* border: 1px solid #d1d5db; */
   background: white;
   transition: border-color 0.2s ease;
 }
 
 .inputPassContainer:focus-within {
-  border-color: #5E5CCC;
+  border-color: #5e5ccc;
   box-shadow: 0 0 0 3px rgba(94, 92, 204, 0.1);
 }
 
@@ -71,11 +71,11 @@
 .inputPassContainer input:disabled {
   box-shadow: none;
   cursor: not-allowed;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }
 
 .inputPassContainer input::placeholder {
-  color: #9CA3AF;
+  color: #9ca3af;
   font-size: 14px;
   font-weight: 400;
 }
@@ -85,17 +85,17 @@
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #9CA3AF;
+  color: #9ca3af;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .inputPassContainer .passwordIcon:hover {
-  color: #5E5CCC;
+  color: #5e5ccc;
 }
 
 .errorText {
-  color: #EF4444;
+  color: #ef4444;
   font-size: 12px;
   margin-top: 4px;
 }
@@ -127,6 +127,54 @@
 /*  Firefox  */
 .inputBox[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* Textarea styling */
+.textareaBox {
+  height: auto !important;
+  min-height: 120px;
+  padding: 16px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+/* Form variant styling */
+.Container[data-variant="form"] .inputBox,
+.Container[data-variant="form"] .textareaBox {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.Container[data-variant="form"] .inputBox:focus,
+.Container[data-variant="form"] .textareaBox:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
+  outline: none;
+}
+
+.Container[data-variant="form"] .labelText {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+/* Tag input variant styling */
+.Container[data-variant="tag"] .inputBox {
+  border: 2px solid #e9ecef;
+  border-radius: 20px;
+  background: #ffffff;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.Container[data-variant="tag"] .inputBox:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
+  outline: none;
 }
 
 @media (max-width: 991px) {

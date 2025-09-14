@@ -5,10 +5,16 @@ import { Container, Row, Col } from 'react-bootstrap'
 import classes from "./CoachingSessionTemplate.module.css"
 import CoachingSessionCard from '@/component/molecule/CoachingSessionCard'
 import BookingSummary from '@/component/molecule/BookingSummary'
+import Calendar from '@/component/molecule/Calendar'
+import TimeSlotSelector from '@/component/molecule/TimeSlotSelector'
+import SessionTypeSelector from '@/component/molecule/SessionTypeSelector'
 import { duration } from 'moment-timezone'
 
 const CoachingSessionTemplate = () => {
   const [selectedSession, setSelectedSession] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedSessionType, setSelectedSessionType] = useState('online');
 
   // Sample data based on the image description
   const coachingSessions = [
@@ -76,26 +82,71 @@ const CoachingSessionTemplate = () => {
                 <Col md={8}>
                   <div className={classes.sessionsContainer}>
                     <h5 className={classes.sectionTitle}>Book a Session</h5>
-                    {coachingSessions.map((session) => (
-                      <CoachingSessionCard
-                        key={session.id}
-                        title={session.title}
-                        duration={session.duration}
-                        rating={session.rating}
-                        sessionsSold={session.sessionsSold}
-                        tags={session.tags}
-                        price={session.price}
-                        timePeriod={session.timePeriod}
-                        image={session.image}
-                        onClick={() => setSelectedSession(session)}
-                        isSelected={selectedSession?.id === session.id}
-                      />
-                    ))}
+                    
+                    {/* Show only the selected session card */}
+                    {selectedSession ? (
+                      <>
+                        <CoachingSessionCard
+                          title={selectedSession.title}
+                          duration={selectedSession.duration}
+                          rating={selectedSession.rating}
+                          sessionsSold={selectedSession.sessionsSold}
+                          tags={selectedSession.tags}
+                          price={selectedSession.price}
+                          timePeriod={selectedSession.timePeriod}
+                          image={selectedSession.image}
+                          onClick={() => setSelectedSession(null)}
+                          isSelected={true}
+                        />
+                        
+                        <div className={classes.bookingSection}>
+                          <h5 className={classes.sectionTitle}>Select Date & Time</h5>
+                          
+                          <Calendar 
+                            selectedDate={selectedDate}
+                            onDateSelect={setSelectedDate}
+                          />
+                          
+                          <TimeSlotSelector 
+                            selectedTime={selectedTime}
+                            onTimeSelect={setSelectedTime}
+                          />
+                        </div>
+                      </>
+                    ) : (
+                      coachingSessions.map((session) => (
+                        <CoachingSessionCard
+                          key={session.id}
+                          title={session.title}
+                          duration={session.duration}
+                          rating={session.rating}
+                          sessionsSold={session.sessionsSold}
+                          tags={session.tags}
+                          price={session.price}
+                          timePeriod={session.timePeriod}
+                          image={session.image}
+                          onClick={() => setSelectedSession(session)}
+                          isSelected={false}
+                        />
+                      ))
+                    )}
                   </div>
                 </Col>
                 <Col md={4}>
                 <h5 className={classes.sectionTitle}>Session summary</h5>
-                  <BookingSummary selectedSession={selectedSession} />
+                  <BookingSummary 
+                    selectedSession={selectedSession}
+                    selectedDate={selectedDate}
+                    selectedTime={selectedTime}
+                    selectedSessionType={selectedSessionType}
+                  />
+                  
+                  {selectedSession && (
+                    <SessionTypeSelector 
+                      selectedType={selectedSessionType}
+                      onTypeSelect={setSelectedSessionType}
+                    />
+                  )}
                 </Col>
             </Row>
         </Container>

@@ -62,40 +62,62 @@ const Input = ({
           style={{ ...customStyle }}
         >
           {leftIcon && <div className={classes.leftIconBox}>{leftIcon}</div>}
-          <input
-            value={value}
-            color-variant={variant}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-            disabled={disabled}
-            placeholder={placeholder}
-            type={passToggle == true ? "text" : type}
-            id={`input${label}`}
-            className={` ${[
-              inputBoxClass,
-              classes.inputBox,
-              noBorder && classes.noBorder,
-            ].join(" ")}`}
-            style={{ ...inputStyle, ...(leftIcon && { paddingLeft: 50 }) }}
-            onKeyPress={(e) =>
-              ["Enter", "NumpadEnter"].includes(e.code) &&
-              onEnterClick &&
-              onEnterClick()
-            }
-            // onBlur={() => {
-            //   setValue(value?.trim());
-            // }}
-            ref={inputRef}
-            onKeyDown={(e) => {
-              if (type == "number") {
-                return (
-                  ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()
-                );
+          {type === "textarea" ? (
+            <textarea
+              value={value}
+              color-variant={variant}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+              disabled={disabled}
+              placeholder={placeholder}
+              id={`input${label}`}
+              className={` ${[
+                inputBoxClass,
+                classes.textareaBox,
+                noBorder && classes.noBorder,
+              ].join(" ")}`}
+              style={{ ...inputStyle, ...(leftIcon && { paddingLeft: 50 }) }}
+              ref={inputRef}
+              rows={4}
+              {...props}
+            />
+          ) : (
+            <input
+              value={value}
+              color-variant={variant}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+              disabled={disabled}
+              placeholder={placeholder}
+              type={passToggle == true ? "text" : type}
+              id={`input${label}`}
+              className={` ${[
+                inputBoxClass,
+                classes.inputBox,
+                noBorder && classes.noBorder,
+              ].join(" ")}`}
+              style={{ ...inputStyle, ...(leftIcon && { paddingLeft: 50 }) }}
+              onKeyPress={(e) =>
+                ["Enter", "NumpadEnter"].includes(e.code) &&
+                onEnterClick &&
+                onEnterClick()
               }
-            }}
-            {...props}
-          />
+              // onBlur={() => {
+              //   setValue(value?.trim());
+              // }}
+              ref={inputRef}
+              onKeyDown={(e) => {
+                if (type == "number") {
+                  return (
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()
+                  );
+                }
+              }}
+              {...props}
+            />
+          )}
 
           {rightIcon && <div className={classes.rightIconBox}>{rightIcon}</div>}
 

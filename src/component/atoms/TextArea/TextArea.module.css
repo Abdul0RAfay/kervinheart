@@ -1,0 +1,73 @@
+.textAreaBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.textAreaBox textarea {
+  padding: 16px;
+  font-size: 14px;
+  resize: vertical;
+  width: 100%;
+  background: white;
+  outline: none;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #374151;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  line-height: 1.5;
+  min-height: 120px;
+}
+
+.textAreaBox textarea:focus {
+  border-color: #5e5ccc;
+  box-shadow: 0 0 0 3px rgba(94, 92, 204, 0.1);
+}
+
+.textAreaBox textarea::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.textAreaBox textarea:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+.labelDisabled {
+  color: #9ca3af;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Form variant styling */
+.textAreaBox[data-variant="form"] textarea {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.textAreaBox[data-variant="form"] textarea:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
+}
+
+.textAreaBox[data-variant="form"] .label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+}

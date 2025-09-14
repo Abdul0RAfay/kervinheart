@@ -1,0 +1,90 @@
+.entriesSection {
+  background: transparent;
+  padding: 0;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 24px 0;
+  padding: 0 8px;
+}
+
+.entriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100vh - 135px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.entriesList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.entriesList::-webkit-scrollbar-track {
+  background: #f1f3f4;
+  border-radius: 3px;
+}
+
+.entriesList::-webkit-scrollbar-thumb {
+  background: #c1c8cd;
+  border-radius: 3px;
+}
+
+.entriesList::-webkit-scrollbar-thumb:hover {
+  background: #a8b2ba;
+}
+
+.formSection {
+  position: sticky;
+  height: fit-content;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .journalMain {
+    padding: 16px 0;
+  }
+
+  .journalRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    padding: 0;
+  }
+
+  .entriesList {
+    max-height: 400px;
+  }
+
+  .formSection {
+    position: static;
+    top: auto;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .journalMain {
+    padding: 12px 0;
+  }
+
+  .journalRow {
+    gap: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+}
