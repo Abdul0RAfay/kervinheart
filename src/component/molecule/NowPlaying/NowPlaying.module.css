@@ -1,0 +1,184 @@
+.nowPlayingContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #6c757d;
+}
+
+.emptyState h4 {
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.nowPlayingHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.playIcon {
+  color: #6f42c1;
+  font-size: 1rem;
+}
+
+.nowPlayingHeader h4 {
+  margin: 0;
+  color: #212529;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mediaPlayer {
+  margin-bottom: 1.5rem;
+}
+
+.playerContainer {
+  width: 100%;
+  height: 200px;
+  background-color: #6c757d;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.playButton {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.playButton:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.playButtonIcon {
+  color: #6c757d;
+  font-size: 1.2rem;
+  margin-left: 2px; /* Slight adjustment for visual centering */
+}
+
+.mediaInfo {
+  margin-bottom: 1rem;
+}
+
+.mediaTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.mediaDuration {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.clockIcon {
+  font-size: 0.75rem;
+}
+
+.mediaTags {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tagsLabel {
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.tagsText {
+  color: #495057;
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+}
+
+.transcriptSection {
+  margin-top: 1rem;
+}
+
+.transcriptHeader {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 0.75rem 0;
+}
+
+.transcriptContent {
+  color: #495057;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.transcriptContent p {
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nowPlayingContainer {
+    padding: 1rem;
+  }
+
+  .playerContainer {
+    height: 150px;
+  }
+
+  .playButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .playButtonIcon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nowPlayingContainer {
+    padding: 0.75rem;
+  }
+
+  .playerContainer {
+    height: 120px;
+  }
+
+  .playButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .playButtonIcon {
+    font-size: 0.9rem;
+  }
+}

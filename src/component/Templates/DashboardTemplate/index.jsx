@@ -64,7 +64,7 @@ const DashboardTemplate = () => {
                     id: 1,
                     icon: '▶️',
                     title: 'Start Meditation',
-                    link: '/meditation'
+                    link: '/meditations'
                   },
                   {
                     id: 2,
