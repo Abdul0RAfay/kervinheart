@@ -11,10 +11,15 @@ const CoachingSessionCard = ({
   tags, 
   price, 
   timePeriod,
-  image 
+  image,
+  onClick,
+  isSelected
 }) => {
   return (
-    <div className={styles.coachingSessionCard}>
+    <div 
+      className={`${styles.coachingSessionCard} ${isSelected ? styles.selected : ''}`}
+      onClick={onClick}
+    >
       <div className={styles.cardContent}>
         <div className={styles.imageContainer}>
           <Image 

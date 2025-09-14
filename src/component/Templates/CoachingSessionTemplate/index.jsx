@@ -1,10 +1,15 @@
-import React from 'react'
+
+"use client"
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import classes from "./CoachingSessionTemplate.module.css"
 import CoachingSessionCard from '@/component/molecule/CoachingSessionCard'
+import BookingSummary from '@/component/molecule/BookingSummary'
 import { duration } from 'moment-timezone'
 
 const CoachingSessionTemplate = () => {
+  const [selectedSession, setSelectedSession] = useState(null);
+
   // Sample data based on the image description
   const coachingSessions = [
     {
@@ -82,12 +87,15 @@ const CoachingSessionTemplate = () => {
                         price={session.price}
                         timePeriod={session.timePeriod}
                         image={session.image}
+                        onClick={() => setSelectedSession(session)}
+                        isSelected={selectedSession?.id === session.id}
                       />
                     ))}
                   </div>
                 </Col>
                 <Col md={4}>
-                  {/* Sidebar content can be added here */}
+                <h5 className={classes.sectionTitle}>Session summary</h5>
+                  <BookingSummary selectedSession={selectedSession} />
                 </Col>
             </Row>
         </Container>

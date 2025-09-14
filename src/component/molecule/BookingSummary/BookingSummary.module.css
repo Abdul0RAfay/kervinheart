@@ -1,0 +1,118 @@
+.bookingSummary {
+  height: 100%;
+}
+
+.summaryCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  min-height: 400px;
+}
+
+.header {
+  color: #4a5568;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.sessionTitle {
+  color: #2d3748;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.selectedSession {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.noSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 200px;
+  gap: 12px;
+}
+
+.prompt {
+  color: #718096;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.sessionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.value {
+  color: #2d3748;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag {
+  background-color: #edf2f7;
+  color: #4a5568;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.bookButton {
+  background-color: #4a5568;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 16px;
+}
+
+.bookButton:hover {
+  background-color: #2d3748;
+}
+
+.bookButton:active {
+  background-color: #1a202c;
+}
