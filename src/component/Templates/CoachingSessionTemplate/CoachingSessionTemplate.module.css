@@ -1,0 +1,15 @@
+/* .coachingSessionMain {
+  min-height: 100vh;
+  padding: 40px 0;
+} */
+
+.sessionsContainer {
+  padding: 20px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+}
