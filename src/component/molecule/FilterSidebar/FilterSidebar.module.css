@@ -1,0 +1,123 @@
+.filterSidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filterTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterIcon {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.filterTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-family: inherit;
+}
+
+.caret {
+  font-size: 14px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-weight: normal;
+}
+
+.caret:hover {
+  transform: scale(1.1);
+}
+
+.filterSection {
+  margin-bottom: 16px;
+}
+
+.filterSection:last-child {
+  margin-bottom: 0;
+}
+
+.filterDivider {
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 16px 0;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px 0;
+  font-family: inherit;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.radioInput {
+  margin: 0 10px 0 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #8b5cf6;
+  cursor: pointer;
+}
+
+.radioText {
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.radioLabel:hover .radioText {
+  color: #8b5cf6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .filterSidebar {
+    position: static;
+    margin-bottom: 20px;
+    padding: 16px;
+  }
+
+  .filterTitle {
+    font-size: 15px;
+  }
+
+  .sectionTitle {
+    font-size: 13px;
+  }
+
+  .radioText {
+    font-size: 13px;
+  }
+}

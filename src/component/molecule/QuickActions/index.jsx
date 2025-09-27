@@ -1,28 +1,38 @@
 import React from 'react';
 import styles from './QuickActions.module.css';
+import { FaPlay, FaComments, FaUsers } from 'react-icons/fa';
 
 const QuickActions = ({ 
   actions = [
     {
       id: 1,
-      icon: '▶️',
+      icon: 'FaPlay',
       title: 'Start Meditation',
       link: '/meditation'
     },
     {
       id: 2,
-      icon: '💬',
+      icon: 'FaComments',
       title: 'Message Coach',
       link: '/messages'
     },
     {
       id: 3,
-      icon: '👥',
+      icon: 'FaUsers',
       title: 'Join Group Session',
       link: '/group-session'
     }
   ]
 }) => {
+  // Icon mapping function
+  const getIcon = (iconName) => {
+    const iconMap = {
+      'FaPlay': <FaPlay />,
+      'FaComments': <FaComments />,
+      'FaUsers': <FaUsers />
+    };
+    return iconMap[iconName] || iconName; // fallback to original if not found
+  };
   return (
     <div className={styles.quickActions}>
       
@@ -34,7 +44,7 @@ const QuickActions = ({
             className={styles.actionButton}
           >
             <div className={styles.actionIcon}>
-              {action.icon}
+              {getIcon(action.icon)}
             </div>
             <span className={styles.actionTitle}>{action.title}</span>
           </a>

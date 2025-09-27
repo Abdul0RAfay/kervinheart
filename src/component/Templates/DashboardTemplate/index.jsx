@@ -62,19 +62,19 @@ const DashboardTemplate = () => {
                 actions={[
                   {
                     id: 1,
-                    icon: '▶️',
+                    icon: 'FaPlay',
                     title: 'Start Meditation',
                     link: '/meditations'
                   },
                   {
                     id: 2,
-                    icon: '💬',
+                    icon: 'FaComments',
                     title: 'Message Coach',
                     link: '/messages'
                   },
                   {
                     id: 3,
-                    icon: '👥',
+                    icon: 'FaUsers',
                     title: 'Join Group Session',
                     link: '/group-session'
                   }

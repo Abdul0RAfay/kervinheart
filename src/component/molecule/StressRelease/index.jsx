@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './StressRelease.module.css';
 import Button from '@/component/atoms/Button';
 import Image from 'next/image';
+import { FaPlay } from 'react-icons/fa';
 
 const StressRelease = ({ 
   title = "10-Minute Stress Release",
@@ -26,7 +27,7 @@ const StressRelease = ({
           className={styles.playButton}
           onClick={onPlay}
           variant={"primary"}
-          leftIcon={"▶️"}
+          leftIcon={<FaPlay />}
         label={"Play Now"}
         />
          

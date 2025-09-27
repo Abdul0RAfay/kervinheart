@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './BookingSummary.module.css';
-import { FaCalendarAlt, FaClock } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaVideo, FaMapMarkerAlt } from 'react-icons/fa';
 import Button from '@/component/atoms/Button';
 
 const BookingSummary = ({ 
@@ -39,12 +39,14 @@ const BookingSummary = ({
                     <button 
                       className={`${styles.sessionTypeButton} ${selectedSessionType === 'online' ? styles.selected : ''}`}
                     >
-                      📹 Online
+                      <FaVideo className={styles.sessionTypeIcon} />
+                      Online
                     </button>
                     <button 
                       className={`${styles.sessionTypeButton} ${selectedSessionType === 'in-person' ? styles.selected : ''}`}
                     >
-                      📍 In-Person
+                      <FaMapMarkerAlt className={styles.sessionTypeIcon} />
+                      In-Person
                     </button>
                   </div>
                 </div>

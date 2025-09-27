@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './SessionCard.module.css';
 import Button from '@/component/atoms/Button';
 import Image from 'next/image';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const SessionCard = ({ coachName, coachTitle, sessionTime, isAddedToCalendar = true }) => {
   return (
@@ -29,7 +30,7 @@ const SessionCard = ({ coachName, coachTitle, sessionTime, isAddedToCalendar = t
         <div className={styles.header}>
           {isAddedToCalendar && (
             <div className={styles.calendarBadge}>
-              <span className={styles.calendarIcon}>📅</span>
+              <FaCalendarAlt className={styles.calendarIcon} />
               <span>Added to google calendar</span>
             </div>
           )}

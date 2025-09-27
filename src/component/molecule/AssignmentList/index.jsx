@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Tabs from '@/component/atoms/Tabs';
 import styles from './AssignmentList.module.css';
+import { FaCheckCircle, FaCircle } from 'react-icons/fa';
 
 const AssignmentList = ({ 
   assignments = [
@@ -55,7 +56,9 @@ const AssignmentList = ({
   });
 
   const getStatusIcon = (status) => {
-    return status === 'submitted' ? '✅' : '⭕';
+    return status === 'submitted' ? 
+      <FaCheckCircle className={styles.checkIcon} style={{ color: '#10B981' }} /> : 
+      <FaCircle className={styles.pendingIcon} style={{ color: '#F59E0B' }} />;
   };
 
   const getStatusClass = (status) => {

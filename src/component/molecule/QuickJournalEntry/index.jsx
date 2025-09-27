@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './QuickJournalEntry.module.css';
+import { FaEdit } from 'react-icons/fa';
 
 const QuickJournalEntry = ({ 
   question = "What's on your mind today?",
@@ -33,7 +34,9 @@ const QuickJournalEntry = ({
             className={styles.journalInput}
             rows={1}
           />
-          <div className={styles.inputIcon}>📝</div>
+          <div className={styles.inputIcon}>
+            <FaEdit />
+          </div>
         </div>
         
         {/* <button 

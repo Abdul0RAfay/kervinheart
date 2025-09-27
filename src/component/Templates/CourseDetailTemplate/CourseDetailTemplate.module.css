@@ -1,0 +1,326 @@
+/* Bootstrap container styles - using Container fluid */
+.courseDetailPage :global(.container-fluid) {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.courseDetailPage :global(.row) {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.courseDetailPage :global(.col-lg-8),
+.courseDetailPage :global(.col-lg-4) {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.leftColumn {
+  background: var(--white-color);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Course Header */
+.courseHeader {
+  margin-bottom: 30px;
+}
+
+.courseTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.courseDescription {
+  font-size: 16px;
+  color: var(--primary-color);
+  opacity: 0.8;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.courseStats {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.starIcon {
+  color: #ffc107;
+  font-size: 18px;
+}
+
+.studentsIcon,
+.clockIcon {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.statText {
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Navigation Tabs - Using pre-built component */
+
+/* Tab Content */
+.tabContent {
+  min-height: 400px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 20px 0;
+}
+
+/* Learning Objectives and Requirements */
+.learningList,
+.requirementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.checkIcon {
+  color: #10b981;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.bulletPoint {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.learningText,
+.requirementText {
+  font-size: 16px;
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+
+/* Detailed Description */
+.detailedDescription {
+  font-size: 16px;
+  color: var(--primary-color);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Unified Course Card */
+.courseCard {
+  background: var(--white-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.courseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Image */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageActions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.actionButton {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 24px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summaryItem:last-child {
+  border-bottom: none;
+}
+
+.summaryLabel {
+  font-size: 14px;
+  color: var(--primary-color);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.summaryValue {
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Enrollment Section */
+.enrollmentSection {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.totalCost {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.enrollButton {
+  height: 48px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 16px 24px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .courseDetailPage :global(.col-lg-8),
+  .courseDetailPage :global(.col-lg-4) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .courseDetailPage {
+    padding: 20px 16px;
+  }
+
+  .courseDetailPage :global(.container-fluid) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .courseDetailPage :global(.row) {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  .courseDetailPage :global(.col-lg-8),
+  .courseDetailPage :global(.col-lg-4) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .leftColumn {
+    padding: 24px;
+  }
+
+  .courseTitle {
+    font-size: 24px;
+  }
+
+  .courseStats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .learningText,
+  .requirementText,
+  .detailedDescription {
+    font-size: 14px;
+  }
+
+  .cardContent {
+    padding: 20px;
+  }
+
+  .enrollButton {
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    height: 44px !important;
+  }
+
+  .totalCost {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courseDetailPage {
+    padding: 16px 12px;
+  }
+
+  .leftColumn {
+    padding: 20px;
+  }
+
+  .courseTitle {
+    font-size: 20px;
+  }
+
+  .courseDescription {
+    font-size: 14px;
+  }
+}
