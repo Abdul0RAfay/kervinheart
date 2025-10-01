@@ -7,6 +7,7 @@ import classes from "./CourseDetailTemplate.module.css";
 import Image from 'next/image';
 import Tabs from '@/component/atoms/Tabs';
 import Button from '@/component/atoms/Button';
+import Accordion from '@/component/atoms/Accordion';
 
 const CourseDetailTemplate = ({ courseData: propCourseData }) => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -56,6 +57,65 @@ const CourseDetailTemplate = ({ courseData: propCourseData }) => {
       "Open mind and willingness to practice mindfulness",
       "Basic leadership or management experience preferred",
       "Commitment to 3-4 hours per week"
+    ],
+    curriculum: [
+        {
+          title: "Develop self-awareness and emotional regulation skills",
+          lessonCount: 4,
+          description: "Learn the fundamentals of self-awareness and how to regulate your emotions effectively in leadership situations.",
+        lessons: [
+          { title: "Introduction to Self-Awareness", duration: "15 min" },
+          { title: "Emotional Intelligence Assessment", duration: "20 min" },
+          { title: "Mindfulness Practices for Leaders", duration: "25 min" },
+          { title: "Emotional Regulation Techniques", duration: "30 min" }
+        ]
+      },
+      {
+        title: "Developing Self-Awareness",
+          lessonCount: 4,
+        description: "Deep dive into understanding your own emotions, triggers, and behavioral patterns.",
+        lessons: [
+          { title: "Understanding Your Emotional Patterns", duration: "20 min" },
+          { title: "Identifying Personal Triggers", duration: "18 min" },
+          { title: "Self-Reflection Techniques", duration: "22 min" },
+          { title: "Building Emotional Vocabulary", duration: "16 min" }
+        ]
+      },
+      {
+        title: "Building Emotional Intelligence",
+          lessonCount: 5,
+        description: "Develop your ability to understand and manage emotions in yourself and others.",
+        lessons: [
+          { title: "The Four Pillars of Emotional Intelligence", duration: "25 min" },
+          { title: "Empathy in Leadership", duration: "20 min" },
+          { title: "Social Skills Development", duration: "28 min" },
+          { title: "Motivation and Self-Direction", duration: "22 min" },
+          { title: "Emotional Intelligence Assessment", duration: "15 min" }
+        ]
+      },
+      {
+        title: "Understanding Emotional Triggers",
+          lessonCount: 3,
+        description: "Learn to identify and manage emotional triggers that can impact your leadership effectiveness.",
+        lessons: [
+          { title: "Common Leadership Triggers", duration: "18 min" },
+          { title: "Trigger Response Strategies", duration: "25 min" },
+          { title: "Creating Emotional Safety", duration: "20 min" }
+        ]
+      },
+      {
+        title: "Building Resilience Through Self-Reflection",
+          lessonCount: 6,
+        description: "Develop resilience and mental strength through structured self-reflection practices.",
+        lessons: [
+          { title: "The Power of Self-Reflection", duration: "20 min" },
+          { title: "Journaling for Leaders", duration: "15 min" },
+          { title: "Learning from Failures", duration: "25 min" },
+          { title: "Building Mental Resilience", duration: "22 min" },
+          { title: "Creating Support Systems", duration: "18 min" },
+          { title: "Long-term Growth Planning", duration: "20 min" }
+        ]
+      }
     ]
   };
 
@@ -128,8 +188,13 @@ const CourseDetailTemplate = ({ courseData: propCourseData }) => {
             
             {activeTab === 'curriculum' && (
               <div className={classes.section}>
-                <h2 className={classes.sectionTitle}>Curriculum</h2>
-                <p>Curriculum content will be displayed here...</p>
+                <div className={classes.curriculumHeader}>
+                  <h2 className={classes.sectionTitle}>Course Curriculum</h2>
+                  <div className={classes.curriculumSummary}>
+                    {courseData.curriculum?.length || 0} sections • {courseData.curriculum?.reduce((total, section) => total + section.lessonCount, 0) || 0} lessons
+                  </div>
+                </div>
+                <Accordion items={courseData.curriculum || []} />
               </div>
             )}
             

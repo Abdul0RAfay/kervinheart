@@ -33,6 +33,65 @@ const CoursesDetailPage = ({ params }) => {
         "Open mind and willingness to practice mindfulness",
         "Basic leadership or management experience preferred",
         "Commitment to 3-4 hours per week"
+      ],
+      curriculum: [
+        {
+          title: "Develop self-awareness and emotional regulation skills",
+          lessonCount: 4,
+          description: "Learn the fundamentals of self-awareness and how to regulate your emotions effectively in leadership situations.",
+          lessons: [
+            { title: "Introduction to Self-Awareness", duration: "15 min" },
+            { title: "Emotional Intelligence Assessment", duration: "20 min" },
+            { title: "Mindfulness Practices for Leaders", duration: "25 min" },
+            { title: "Emotional Regulation Techniques", duration: "30 min" }
+          ]
+        },
+        {
+          title: "Developing Self-Awareness",
+          lessonCount: 4,
+          description: "Deep dive into understanding your own emotions, triggers, and behavioral patterns.",
+          lessons: [
+            { title: "Understanding Your Emotional Patterns", duration: "20 min" },
+            { title: "Identifying Personal Triggers", duration: "18 min" },
+            { title: "Self-Reflection Techniques", duration: "22 min" },
+            { title: "Building Emotional Vocabulary", duration: "16 min" }
+          ]
+        },
+        {
+          title: "Building Emotional Intelligence",
+          lessonCount: 5,
+          description: "Develop your ability to understand and manage emotions in yourself and others.",
+          lessons: [
+            { title: "The Four Pillars of Emotional Intelligence", duration: "25 min" },
+            { title: "Empathy in Leadership", duration: "20 min" },
+            { title: "Social Skills Development", duration: "28 min" },
+            { title: "Motivation and Self-Direction", duration: "22 min" },
+            { title: "Emotional Intelligence Assessment", duration: "15 min" }
+          ]
+        },
+        {
+          title: "Understanding Emotional Triggers",
+          lessonCount: 3,
+          description: "Learn to identify and manage emotional triggers that can impact your leadership effectiveness.",
+          lessons: [
+            { title: "Common Leadership Triggers", duration: "18 min" },
+            { title: "Trigger Response Strategies", duration: "25 min" },
+            { title: "Creating Emotional Safety", duration: "20 min" }
+          ]
+        },
+        {
+          title: "Building Resilience Through Self-Reflection",
+          lessonCount: 6,
+          description: "Develop resilience and mental strength through structured self-reflection practices.",
+          lessons: [
+            { title: "The Power of Self-Reflection", duration: "20 min" },
+            { title: "Journaling for Leaders", duration: "15 min" },
+            { title: "Learning from Failures", duration: "25 min" },
+            { title: "Building Mental Resilience", duration: "22 min" },
+            { title: "Creating Support Systems", duration: "18 min" },
+            { title: "Long-term Growth Planning", duration: "20 min" }
+          ]
+        }
       ]
     },
     {
@@ -62,6 +121,54 @@ const CoursesDetailPage = ({ params }) => {
         "Open mind and willingness to learn new techniques",
         "Commitment to daily practice",
         "Basic understanding of stress concepts"
+      ],
+      curriculum: [
+        {
+          title: "Understanding Stress and Its Impact",
+          lessonCount: 4,
+          description: "Learn about different types of stress and how they affect your mind and body.",
+          lessons: [
+            { title: "What is Stress?", duration: "20 min" },
+            { title: "Types of Stress", duration: "18 min" },
+            { title: "Physical and Mental Effects", duration: "22 min" },
+            { title: "Stress Assessment", duration: "15 min" }
+          ]
+        },
+        {
+          title: "Breathing and Relaxation Techniques",
+          lessonCount: 5,
+          description: "Master proven breathing exercises and relaxation methods for immediate stress relief.",
+          lessons: [
+            { title: "Deep Breathing Fundamentals", duration: "25 min" },
+            { title: "Progressive Muscle Relaxation", duration: "30 min" },
+            { title: "Guided Meditation Basics", duration: "20 min" },
+            { title: "Quick Stress Relief Techniques", duration: "15 min" },
+            { title: "Creating Your Practice Routine", duration: "18 min" }
+          ]
+        },
+        {
+          title: "Building Emotional Resilience",
+          lessonCount: 4,
+          description: "Develop mental toughness and emotional strength to handle life's challenges.",
+          lessons: [
+            { title: "Understanding Resilience", duration: "20 min" },
+            { title: "Cognitive Reframing", duration: "25 min" },
+            { title: "Building Support Networks", duration: "22 min" },
+            { title: "Resilience Action Plan", duration: "20 min" }
+          ]
+        },
+        {
+          title: "Work-Life Balance and Self-Care",
+          lessonCount: 5,
+          description: "Create sustainable habits for maintaining balance and preventing burnout.",
+          lessons: [
+            { title: "Setting Healthy Boundaries", duration: "25 min" },
+            { title: "Time Management Strategies", duration: "22 min" },
+            { title: "Self-Care Planning", duration: "20 min" },
+            { title: "Digital Detox Techniques", duration: "18 min" },
+            { title: "Long-term Balance Maintenance", duration: "20 min" }
+          ]
+        }
       ]
     },
     {
@@ -91,6 +198,63 @@ const CoursesDetailPage = ({ params }) => {
         "Career or work experience preferred",
         "Willingness to reflect on personal values",
         "Commitment to completing assignments"
+      ],
+      curriculum: [
+        {
+          title: "Self-Discovery and Values Assessment",
+          lessonCount: 4,
+          description: "Explore your core values, strengths, and what truly motivates you in your career.",
+          lessons: [
+            { title: "Identifying Your Core Values", duration: "25 min" },
+            { title: "Strengths Assessment", duration: "30 min" },
+            { title: "Passion and Purpose Discovery", duration: "28 min" },
+            { title: "Personal Mission Statement", duration: "22 min" }
+          ]
+        },
+        {
+          title: "Career Vision and Goal Setting",
+          lessonCount: 4,
+          description: "Create a clear vision for your ideal career and set actionable goals to get there.",
+          lessons: [
+            { title: "Designing Your Career Vision", duration: "30 min" },
+            { title: "SMART Goal Framework", duration: "25 min" },
+            { title: "Career Milestone Planning", duration: "28 min" },
+            { title: "Vision Board Creation", duration: "20 min" }
+          ]
+        },
+        {
+          title: "Skills Development and Gap Analysis",
+          lessonCount: 5,
+          description: "Assess your current skills and identify areas for growth and development.",
+          lessons: [
+            { title: "Current Skills Inventory", duration: "25 min" },
+            { title: "Industry Skills Research", duration: "30 min" },
+            { title: "Learning Plan Development", duration: "28 min" },
+            { title: "Skill Building Strategies", duration: "22 min" },
+            { title: "Progress Tracking Methods", duration: "18 min" }
+          ]
+        },
+        {
+          title: "Networking and Professional Relationships",
+          lessonCount: 4,
+          description: "Build meaningful professional relationships and expand your network strategically.",
+          lessons: [
+            { title: "Networking Fundamentals", duration: "25 min" },
+            { title: "Building Authentic Relationships", duration: "28 min" },
+            { title: "Online Professional Presence", duration: "30 min" },
+            { title: "Mentorship and Sponsorship", duration: "22 min" }
+          ]
+        },
+        {
+          title: "Career Transition and Implementation",
+          lessonCount: 3,
+          description: "Navigate career changes and implement your career design plan effectively.",
+          lessons: [
+            { title: "Transition Planning Strategies", duration: "30 min" },
+            { title: "Overcoming Career Obstacles", duration: "25 min" },
+            { title: "Implementation and Review", duration: "28 min" }
+          ]
+        }
       ]
     }
   ];

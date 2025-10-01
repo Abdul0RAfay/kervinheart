@@ -135,6 +135,21 @@
   margin: 0;
 }
 
+/* Curriculum Header */
+.curriculumHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.curriculumSummary {
+  font-size: 14px;
+  color: var(--primary-color);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
 /* Unified Course Card */
 .courseCard {
   background: var(--white-color);
