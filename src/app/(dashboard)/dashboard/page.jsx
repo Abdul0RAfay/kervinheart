@@ -1,10 +1,10 @@
-import DashboardTemplate from '@/component/Templates/DashboardTemplate'
+import DashboardPageTemplate from '@/component/Templates/AdminTemplates/Dashboard'
 import React from 'react'
 
-const DashboardPage = () => {
+const Dashboard = () => {
   return (
-    <DashboardTemplate/>
+    <DashboardPageTemplate/>
   )
 }
 
-export default DashboardPage
+export default Dashboard

@@ -1,50 +1,49 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { IoLogOutOutline } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./Sidebar.module.css";
 import SidebarItem from "@/component/atoms/SidebarItem";
-import { sidebarData, utilitySidebarData } from "@/developmentContent/enum";
+import { adminSidebarData, sidebarData, utilitySidebarData } from "@/developmentContent/enum";
 
 const Sidebar = ({ isCollapsed }) => {
   const dispatch = useDispatch();
   const router = useRouter();
-  // const signout = () => {
-  //   Cookies.remove("_xpdx");
-  //   Cookies.remove("_xpdx_rf");
-  //   router.push("/auth/login");
-  //   dispatch(signOutRequest());
-  // };
+
+  // Get user role from Redux or localStorage
+  // const user = useSelector((state) => state.auth.user);
+  const role = "admin";
+
+  // Filter sidebar items if needed
+  const filteredSidebarData =
+    role === "admin"
+      ? adminSidebarData // full access
+      : sidebarData
+
   return (
     <div className={classes?.Sidebar}>
       <div className={classes?.sidebarItem}>
-        {sidebarData?.map((item) => {
-          return (
-            <SidebarItem isCollapsed={isCollapsed} item={item} key={item._id} />
-          );
-        })}
+        {filteredSidebarData.map((item) => (
+          <SidebarItem isCollapsed={isCollapsed} item={item} key={item._id} />
+        ))}
       </div>
 
-      {/* Separator */}
       <div className={classes?.separator}></div>
 
-      {/* Utility Navigation */}
       <div className={classes?.utilityItems}>
-        {utilitySidebarData?.map((item) => {
-          return (
-            <SidebarItem isCollapsed={isCollapsed} item={item} key={item._id} />
-          );
-        })}
+        {utilitySidebarData.map((item) => (
+          <SidebarItem isCollapsed={isCollapsed} item={item} key={item._id} />
+        ))}
       </div>
 
-      {/* Logout */}
       <div
         onClick={() => {
+          // your logout logic
         }}
         className={classes?.logout}
       >
-           <IoLogOutOutline className={classes?.logoutIcon} />
-          <p>Logout</p>
+        <IoLogOutOutline className={classes?.logoutIcon} />
+        <p>Logout</p>
       </div>
     </div>
   );
