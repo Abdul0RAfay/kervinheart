@@ -1,0 +1,193 @@
+/* Time Filter Container */
+.timeFilterContainer {
+  margin-bottom: 32px;
+}
+
+/* KPI Stats Container */
+.kpiContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Content Grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Section Styling */
+.recentActivitySection,
+.cohortPerformanceSection {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Recent Activity Styling */
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activityItem {
+  padding: 16px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityAction {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.activityTime {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Cohort Performance Styling */
+.cohortList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cohortItem {
+  padding: 16px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cohortItem:last-child {
+  border-bottom: none;
+}
+
+.cohortHeader {
+  margin-bottom: 12px;
+}
+
+.cohortName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.cohortStats {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.cohortStats span {
+  font-weight: 400;
+}
+
+.cohortProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #6b7280;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .kpiContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .activityAndProgressTemplate {
+    padding: 16px;
+  }
+
+  .kpiContainer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .recentActivitySection,
+  .cohortPerformanceSection {
+    padding: 16px;
+  }
+
+  .cohortStats {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .activityAndProgressTemplate {
+    padding: 12px;
+  }
+
+  .recentActivitySection,
+  .cohortPerformanceSection {
+    padding: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .sectionSubtitle {
+    font-size: 13px;
+  }
+}

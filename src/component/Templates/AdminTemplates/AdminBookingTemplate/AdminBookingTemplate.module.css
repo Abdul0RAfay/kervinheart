@@ -1,0 +1,273 @@
+/* Statistics Cards Container */
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+/* Main Content Layout */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  height: calc(100vh - 200px);
+}
+
+/* Calendar Section */
+.calendarSection {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+}
+
+.viewSelector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.viewSelect {
+  appearance: none;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 8px 32px 8px 12px;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.chevronIcon {
+  position: absolute;
+  right: 8px;
+  color: #6c757d;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Calendar Grid */
+.calendarGrid {
+  display: flex;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.timeColumn {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e9ecef;
+  padding-right: 16px;
+}
+
+.timeSlot {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.calendarArea {
+  flex: 1;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyCalendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6c757d;
+  text-align: center;
+}
+
+.calendarIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyCalendar p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Booking List Section */
+.bookingListSection {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.searchFilterContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 8px 16px 8px 40px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #495057;
+  background: white;
+  min-width: 200px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.filterContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filterSelect {
+  appearance: none;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 8px 32px 8px 12px;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.filterIcon {
+  position: absolute;
+  right: 8px;
+  color: #6c757d;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.bookingList {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+/* Session Section */
+.sessionSection {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .calendarSection {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .adminBookingTemplate {
+    padding: 16px;
+  }
+
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .calendarSection,
+  .bookingListSection,
+  .sessionSection {
+    padding: 16px;
+  }
+
+  .searchFilterContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .searchInput {
+    min-width: auto;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+
+  .timeColumn {
+    width: 80px;
+  }
+
+  .timeSlot {
+    font-size: 12px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .statsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .viewSelector {
+    align-self: flex-end;
+  }
+}

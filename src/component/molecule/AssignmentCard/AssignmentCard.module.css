@@ -1,0 +1,181 @@
+.assignmentCard {
+  position: relative;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.assignmentCard:hover {
+  border-color: #a799e8;
+  box-shadow: 0 4px 12px rgba(167, 153, 232, 0.15);
+}
+
+.assignmentCard.selected {
+  background: #f8f7ff;
+  border-color: #a799e8;
+  box-shadow: 0 4px 12px rgba(167, 153, 232, 0.15);
+}
+
+/* Left accent line */
+.accentLine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #cfc8e5;
+  border-radius: 4px 0 0 4px;
+}
+
+.assignmentCard.selected .accentLine {
+  background: #a799e8;
+}
+
+/* Assignment content */
+.assignmentContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assignmentHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.assignmentTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a3780;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.studentName {
+  font-size: 14px;
+  color: #888888;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Badges container */
+.badgesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Status badge */
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusBadge.completed {
+  background: #4a3780;
+  color: white;
+}
+
+.statusBadge.inReview {
+  background: #4a3780;
+  color: white;
+}
+
+.statusBadge.pending {
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.statusIcon {
+  font-size: 10px;
+}
+
+/* Detail badges */
+.detailBadge {
+  background: white;
+  border: 1px solid #dddddd;
+  color: #555555;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Dates container */
+.datesContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.dateText {
+  font-size: 14px;
+  color: #555555;
+  font-weight: 400;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .assignmentCard {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .assignmentTitle {
+    font-size: 16px;
+  }
+
+  .badgesContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .datesContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .assignmentCard {
+    padding: 12px;
+  }
+
+  .assignmentTitle {
+    font-size: 15px;
+  }
+
+  .studentName {
+    font-size: 13px;
+  }
+
+  .statusBadge,
+  .detailBadge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .dateText {
+    font-size: 13px;
+  }
+}

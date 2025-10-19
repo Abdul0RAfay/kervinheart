@@ -1,12 +1,14 @@
 "use client";
 import React from 'react';
 import classes from './MeditationCard.module.css';
-import { FaClock, FaVideo, FaHeadphones } from 'react-icons/fa';
+import { FaClock, FaVideo, FaHeadphones, FaEdit } from 'react-icons/fa';
 
 const MeditationCard = ({ 
   meditation, 
   onClick, 
-  isSelected 
+  isSelected,
+  isEdit = false,
+  onEdit
 }) => {
   const { 
     id, 
@@ -50,6 +52,15 @@ const MeditationCard = ({
             ))}
           </div>
         </div>
+
+        {isEdit && (
+          <div className={classes.editButton} onClick={(e) => {
+            e.stopPropagation();
+            onEdit?.(meditation);
+          }}>
+            <FaEdit className={classes.editIcon} />
+          </div>
+        )}
       </div>
     </div>
   );

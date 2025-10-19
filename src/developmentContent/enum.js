@@ -56,7 +56,7 @@ export const sidebarData = [
       _id: 3,
       name: "Activity & Progress",
       icon: "/images/app-images/dashboard-icon/icon3.png",
-      link: "/activity-progress",
+      link: "/activity-and-progress",
     },
     {
       _id: 4,

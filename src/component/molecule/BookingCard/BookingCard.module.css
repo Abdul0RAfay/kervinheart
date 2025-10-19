@@ -1,0 +1,160 @@
+.bookingCard {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.bookingCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sessionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.clientName {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 500;
+}
+
+.dateTime {
+  font-size: 13px;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 400;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.durationBadge {
+  background: #f8f6ff;
+  color: #6f42c1;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.statusBadge.confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.statusBadge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.statusBadge.cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.statusBadge.completed {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.optionsButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.optionsButton:hover {
+  background: #f8f9fa;
+}
+
+.optionsIcon {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .bookingCard {
+    padding: 16px;
+  }
+
+  .cardContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sessionTitle {
+    font-size: 15px;
+  }
+
+  .clientName,
+  .dateTime {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bookingCard {
+    padding: 12px;
+  }
+
+  .rightSection {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .durationBadge,
+  .statusBadge {
+    font-size: 11px;
+  }
+}

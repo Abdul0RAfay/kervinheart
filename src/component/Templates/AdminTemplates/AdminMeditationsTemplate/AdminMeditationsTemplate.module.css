@@ -1,0 +1,89 @@
+/* Statistics Cards Container */
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Filter Tabs Container */
+.filterContainer {
+  margin-bottom: 32px;
+}
+
+/* Meditation Library Section */
+.librarySection {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Meditation List */
+.meditationList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .adminMeditationsTemplate {
+    padding: 16px;
+  }
+
+  .statsContainer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .librarySection {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .adminMeditationsTemplate {
+    padding: 12px;
+  }
+
+  .statsContainer {
+    gap: 12px;
+  }
+
+  .librarySection {
+    padding: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .sectionSubtitle {
+    font-size: 13px;
+  }
+}

@@ -84,6 +84,29 @@
   font-weight: 500;
 }
 
+.editButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.editButton:hover {
+  background: #f3f4f6;
+}
+
+.editIcon {
+  color: #6b7280;
+  font-size: 14px;
+}
+
 /* Responsive design */
 @media (max-width: 576px) {
   .meditationCard {
