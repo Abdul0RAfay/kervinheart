@@ -5,7 +5,7 @@
 .sessionTypeTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--text-strong);
   margin-bottom: 16px;
   margin-top: 0;
 }
@@ -17,14 +17,14 @@
 
 .typeButton {
   background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
   padding: 12px 16px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 14px;
   font-weight: 500;
-  color: #2d3748;
+  color: var(--text-strong);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -34,8 +34,8 @@
 }
 
 .typeButton:hover {
-  border-color: #4a5568;
-  background-color: #f7fafc;
+  border-color: var(--gray-600);
+  background-color: var(--gray-50);
 }
 
 .typeButton.selected {

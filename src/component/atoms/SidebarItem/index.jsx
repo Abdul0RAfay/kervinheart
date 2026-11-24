@@ -1,31 +1,25 @@
 "use client";
 
-import React from "react";
-import classes from "./SidebarItem.module.css";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import classes from "./SidebarItem.module.css";
 
-const SidebarItem = ({ item, isCollapsed }) => {
+const SidebarItem = ({ item, onNavigate }) => {
   const pathname = usePathname();
-  const router = useRouter();
-  const isActive = pathname === item.link;
+  const isActive =
+    pathname === item.link || (item.link !== "/" && pathname?.startsWith(`${item.link}/`));
+  const Icon = item?.icon;
 
   return (
-    <div
-      onClick={() => {
-        router.push(`${item?.link}`);
-      }}
-      className={`${classes?.item} ${
-        isActive && classes?.active
-      }`}
+    <Link
+      href={item?.link || "#"}
+      onClick={onNavigate}
+      className={`${classes.item} ${isActive ? classes.active : ""}`}
+      aria-current={isActive ? "page" : undefined}
     >
-      <div className={classes.icon}>
-        <Image src={item?.icon} fill alt="icon" />
-      </div>
-      {/* <item.icon className={classes?.icon} /> */}
-      <p className={isCollapsed ? "collapse" : undefined}>{item?.name}</p>
-    </div>
+      {Icon && <Icon className={classes.icon} aria-hidden="true" />}
+      <span className={classes.label}>{item?.name}</span>
+    </Link>
   );
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AuthWrapper from "@/component/atoms/AuthWrapper";
 import classes from "./ForgotPasswordTemplate.module.css";
 import { useFormik } from "formik";
@@ -43,7 +44,7 @@ const ForgotPasswordTemplate = () => {
     >
       <div className={classes.forgotPasswordCard}>
         <form onSubmit={forgotPasswordFormik.handleSubmit} className={classes.forgotPasswordForm}>
-          <h2 className={mergeClass("fs-50 fw-600", classes.formTitle)}>Reset Password</h2>
+          <h2 className={classes.formTitle}>Reset Password</h2>
           
           <div className={classes.descriptionText}>
             <p>
@@ -75,9 +76,9 @@ const ForgotPasswordTemplate = () => {
           <div className={classes.backToLogin}>
             <p>
               Remember your password?{" "}
-              <span className={classes.loginText}>
+              <Link href="/" className={classes.loginText}>
                 Back to Login
-              </span>
+              </Link>
             </p>
           </div>
         </form>

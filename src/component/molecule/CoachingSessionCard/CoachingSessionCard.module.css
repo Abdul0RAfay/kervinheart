@@ -1,7 +1,7 @@
 .coachingSessionCard {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   margin-bottom: 20px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -10,11 +10,11 @@
 
 .coachingSessionCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .coachingSessionCard.selected {
-  background: linear-gradient(90deg, #e8eaff 0%, #fcfeff 100%);
+  background: linear-gradient(90deg, var(--brand-100) 0%, var(--brand-25) 100%);
   border: 1.5px solid #7782f7;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .sessionImage {
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   object-fit: cover;
 }
 
@@ -83,10 +83,10 @@
 }
 
 .tag {
-  background: #f3f5ff;
+  background: var(--brand-50);
   color: var(--primary-color);
   padding: 4px 12px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   font-size: 12px;
   font-weight: 500;
 }

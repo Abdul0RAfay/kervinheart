@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AuthWrapper from "@/component/atoms/AuthWrapper";
 import classes from "./LoginTemplate.module.css";
 import { useFormik } from "formik";
@@ -40,7 +41,7 @@ const LoginTemplate = () => {
     <AuthWrapper title="Let the Journey Begin!" description="Unlock a world of education with a single click!" image={"/images/app-images/auth.png"}>
       <div className={classes.loginCard}>
         <form onSubmit={loginFormik.handleSubmit} className={classes.loginForm}>
-          <h2 className={mergeClass("fs-50 fw-600",classes.formTitle)}>Log In</h2>
+          <h2 className={classes.formTitle}>Log In</h2>
           
           <div className={classes.inputGroup}>
             <Input
@@ -77,9 +78,9 @@ const LoginTemplate = () => {
               />
               <span className={classes.checkboxLabel}>Remember me</span>
             </label>
-            <span   className={classes.forgotPassword}>
+            <Link href="/forgot-password" className={classes.forgotPassword}>
               Forgot password?
-            </span>
+            </Link>
           </div>
 
           <div className={classes.loginButton}>
@@ -106,9 +107,9 @@ const LoginTemplate = () => {
           <div className={classes.signupLink}>
             <p>
               Don't have an account?{" "}
-              <span  className={classes.signupText}>
+              <Link href="/sign-up" className={classes.signupText}>
                 Sign up here
-              </span>
+              </Link>
             </p>
           </div>
         </form>

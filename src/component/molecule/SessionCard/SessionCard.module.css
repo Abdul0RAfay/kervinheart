@@ -1,94 +1,131 @@
 .sessionCard {
-  background: linear-gradient(90deg, #e8eaff 0%, #fcfeff 100%);
-  border: 1px solid #f0f0f0;
-  border-radius: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.sessionCardBody {
+  position: relative;
   display: flex;
-  align-items: start;
+  flex-direction: column;
+  gap: 18px;
   padding: 20px;
-  justify-content: space-between;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--brand-100);
+  box-shadow: var(--shadow-xs);
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--brand-100) 0%, transparent 60%),
+    var(--bg-surface);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 8px;
 }
 
-.header h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-  color: #666;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-600);
 }
 
 .calendarBadge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #f8f9ff;
-  padding: 6px 12px;
-  border-radius: 20px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
-  color: #6c5ce7;
   font-weight: 500;
-  border: 1px solid #e8e6ff;
+  color: var(--success-700);
+  background: var(--success-50);
 }
 
 .calendarIcon {
-  font-size: 12px;
-}
-
-.sessionInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  font-size: 13px;
 }
 
 .coachProfile {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 12px;
 }
 
-.profileImage {
-  position: relative;
-  width: 50px;
-  height: 50px;
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
   border-radius: 50%;
-  overflow: hidden;
-  background: #f5f5f5;
-  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white-color);
+  background: linear-gradient(135deg, var(--brand-400), var(--brand-700));
+  box-shadow: 0 0 0 3px var(--bg-surface), 0 0 0 4px var(--brand-100);
 }
 
-.profileImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.coachName {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.coachTitle {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 .sessionTime {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.timeIcon {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-50);
+  color: var(--brand-600);
+  font-size: 16px;
 }
 
-.joinButton {
-  cursor: pointer;
-  transition: background-color 0.2s;
-  width: 100%;
-  height: 55px !important;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
+.timeLabel {
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
-.joinButton:hover {
-  background: #5a4fcf;
+.timeValue {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.sessionActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.viewAll {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-600);
+}
+
+.viewAll:hover {
+  color: var(--brand-700);
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AuthWrapper from "@/component/atoms/AuthWrapper";
 import classes from "./VerifyOTPTemplate.module.css";
 import { useFormik } from "formik";
@@ -83,7 +84,7 @@ const VerifyOTPTemplate = () => {
     >
       <div className={classes.verifyOTPCard}>
         <form onSubmit={verifyOTPFormik.handleSubmit} className={classes.verifyOTPForm}>
-          <h2 className={mergeClass("fs-50 fw-600", classes.formTitle)}>Enter OTP</h2>
+          <h2 className={classes.formTitle}>Enter OTP</h2>
           
           <div className={classes.descriptionText}>
             <p>
@@ -135,9 +136,9 @@ const VerifyOTPTemplate = () => {
           <div className={classes.backToLogin}>
             <p>
               Didn't receive the code?{" "}
-              <span className={classes.loginText}>
+              <Link href="/" className={classes.loginText}>
                 Back to Login
-              </span>
+              </Link>
             </p>
           </div>
         </form>

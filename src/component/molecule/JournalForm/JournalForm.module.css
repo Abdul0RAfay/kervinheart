@@ -1,11 +1,11 @@
 .journalForm {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e9ecef;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-default);
   height: fit-content;
-  max-height: 80vh;
+  max-height: calc(100vh - 140px);
   overflow-y: auto;
 }
 
@@ -15,7 +15,7 @@
   align-items: center;
   margin-bottom: 10px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--border-default);
 }
 
 .headerLeft {
@@ -25,14 +25,14 @@
 }
 
 .headerIcon {
-  color: #6f42c1;
+  color: var(--brand-600);
   font-size: 20px;
 }
 
 .headerTitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: #212529;
+  color: var(--text-strong);
   margin: 0;
 }
 
@@ -41,16 +41,16 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   transition: all 0.2s ease;
 }
 
 .collapseButton:hover {
-  background: #f8f9fa;
+  background: var(--gray-50);
 }
 
 .collapseIcon {
-  color: #6c757d;
+  color: var(--gray-500);
   font-size: 16px;
   transition: transform 0.2s ease;
 }
@@ -74,7 +74,7 @@
 .label {
   font-size: 14px;
   font-weight: 600;
-  color: #495057;
+  color: var(--gray-700);
   margin: 0;
 }
 
@@ -107,10 +107,10 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #e0e7ff;
-  color: #3730a3;
+  background: var(--brand-100);
+  color: var(--brand-800);
   padding: 6px 12px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   font-size: 14px;
   font-weight: 500;
 }
@@ -118,7 +118,7 @@
 .removeTagButton {
   background: none;
   border: none;
-  color: #6b7280;
+  color: var(--gray-500);
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
@@ -144,7 +144,7 @@
 
 .suggestedLabel {
   font-size: 12px;
-  color: #6c757d;
+  color: var(--gray-500);
   margin: 0 0 8px 0;
   font-weight: 500;
 }
@@ -156,11 +156,11 @@
 }
 
 .suggestedTag {
-  background: #f8f9fa;
-  color: #6c757d;
-  border: 1px solid #dee2e6;
+  background: var(--gray-50);
+  color: var(--gray-500);
+  border: 1px solid var(--border-default);
   padding: 6px 12px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -168,14 +168,14 @@
 }
 
 .suggestedTag:hover:not(:disabled) {
-  background: #e0e7ff;
-  color: #3730a3;
+  background: var(--brand-100);
+  color: var(--brand-800);
   border-color: #a5b4fc;
 }
 
 .suggestedTag:disabled {
-  background: #e0e7ff;
-  color: #3730a3;
+  background: var(--brand-100);
+  color: var(--brand-800);
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -186,7 +186,7 @@
   justify-content: flex-end;
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid var(--border-default);
 }
 
 /* Responsive adjustments */

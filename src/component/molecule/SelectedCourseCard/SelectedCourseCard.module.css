@@ -1,8 +1,8 @@
 .selectedCourseCard {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   height: auto;
@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   height: 200px;
-  color: #6b7280;
+  color: var(--gray-500);
   font-size: 16px;
 }
 
@@ -25,9 +25,9 @@
 }
 
 .sectionTitle {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-strong);
   margin: 0;
   display: flex;
   align-items: center;
@@ -39,15 +39,15 @@
   border: none;
   padding: 8px;
   cursor: pointer;
-  border-radius: 6px;
-  color: #6b7280;
+  border-radius: var(--radius-xs);
+  color: var(--gray-500);
   transition: all 0.2s ease;
   margin-left: auto;
 }
 
 .editButton:hover {
-  color: #374151;
-  background: #f3f4f6;
+  color: var(--gray-700);
+  background: var(--gray-100);
 }
 
 .editIcon {
@@ -65,7 +65,7 @@
 .courseTitle {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-strong);
   margin: 0;
   line-height: 1.3;
 }
@@ -85,7 +85,7 @@
 
 .infoLabel {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--gray-500);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -94,7 +94,7 @@
 .infoValue {
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-strong);
 }
 
 /* Completion Section */
@@ -112,27 +112,27 @@
 
 .completionLabel {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--gray-500);
   font-weight: 500;
 }
 
 .completionPercentage {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-strong);
 }
 
 .progressBar {
   width: 100%;
   height: 8px;
-  background: #e5e7eb;
+  background: var(--border-default);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #a799e8 0%, #8b7ed8 100%);
+  background: linear-gradient(90deg, var(--brand-400) 0%, #8b7ed8 100%);
   border-radius: 4px;
   transition: width 0.3s ease;
 }
@@ -149,7 +149,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid var(--gray-100);
 }
 
 .detailRow:last-child {
@@ -158,13 +158,13 @@
 
 .detailLabel {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--gray-500);
   font-weight: 500;
 }
 
 .detailValue {
   font-size: 14px;
-  color: #333;
+  color: var(--text-strong);
   font-weight: 600;
 }
 
@@ -172,10 +172,10 @@
 .previewButton {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #a799e8 0%, #8b7ed8 100%);
+  background: linear-gradient(135deg, var(--brand-400) 0%, #8b7ed8 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -186,7 +186,7 @@
 .previewButton:hover {
   background: linear-gradient(135deg, #9a8bdd 0%, #7b6ecc 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(167, 153, 232, 0.3);
+  box-shadow: var(--shadow-brand);
 }
 
 .previewButton:active {
@@ -211,7 +211,7 @@
   }
 
   .sectionTitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .courseTitle {

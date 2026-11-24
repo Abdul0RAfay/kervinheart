@@ -2,198 +2,147 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 
 .labelText {
-  color: #374151;
-  font-size: 14px;
-  font-style: normal;
+  color: var(--gray-700);
+  font-size: 13px;
   font-weight: 500;
-  line-height: normal;
-  margin-bottom: 8px;
+  line-height: 1.4;
+  margin-bottom: 6px;
 }
 
-.inputBox {
-  height: 48px;
-  padding-inline: 16px;
-  width: 100%;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  background: white;
-  color: #374151;
-  font-size: 14px;
-  transition: border-color 0.2s ease;
-}
-
-.inputBox:focus {
-  outline: none;
-  border-color: #5e5ccc;
-  box-shadow: 0 0 0 3px rgba(94, 92, 204, 0.1);
-}
-
-.inputBox::placeholder {
-  color: #9ca3af;
-  font-size: 14px;
-}
-
-.noBorder {
-  border: none;
+.disabled {
+  color: var(--gray-400);
 }
 
 .inputPassContainer {
-  width: 100%;
-  display: flex;
   position: relative;
-  border-radius: 8px;
-  /* border: 1px solid #d1d5db; */
-  background: white;
-  transition: border-color 0.2s ease;
-}
-
-.inputPassContainer:focus-within {
-  border-color: #5e5ccc;
-  box-shadow: 0 0 0 3px rgba(94, 92, 204, 0.1);
-}
-
-.inputPassContainer input {
-  font-size: 14px;
-  color: #374151;
-  border-radius: inherit;
-  background-color: transparent;
-  font-weight: 400;
-  border: none;
-  outline: none;
+  display: flex;
   width: 100%;
-  height: 48px;
-  padding: 0 16px;
 }
 
-.inputPassContainer input:disabled {
-  box-shadow: none;
-  cursor: not-allowed;
-  background-color: #f9fafb;
-}
-
-.inputPassContainer input::placeholder {
-  color: #9ca3af;
+.inputBox,
+.inputPassContainer input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
   font-size: 14px;
   font-weight: 400;
+  color: var(--text-strong);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xs);
+  outline: none;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 
-.inputPassContainer .passwordIcon {
+.inputBox:hover,
+.inputPassContainer input:hover {
+  border-color: var(--border-strong);
+}
+
+.inputBox:focus,
+.inputPassContainer input:focus {
+  border-color: var(--brand-400);
+  box-shadow: var(--ring);
+}
+
+.inputBox::placeholder,
+.inputPassContainer input::placeholder {
+  color: var(--gray-400);
+}
+
+.inputPassContainer input:disabled,
+.inputBox:disabled {
+  cursor: not-allowed;
+  color: var(--gray-500);
+  background-color: var(--gray-50);
+  box-shadow: none;
+}
+
+.noBorder,
+.inputPassContainer .noBorder {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.passwordIcon {
   position: absolute;
-  right: 15px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #9ca3af;
+  font-size: 20px !important;
+  color: var(--gray-400);
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color var(--dur) var(--ease);
 }
 
-.inputPassContainer .passwordIcon:hover {
-  color: #5e5ccc;
+.passwordIcon:hover {
+  color: var(--brand-600);
+}
+
+.inputPassContainer:has(.passwordIcon) input {
+  padding-right: 44px;
 }
 
 .errorText {
-  color: #ef4444;
+  color: var(--danger-500);
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: 6px !important;
+}
+
+.leftIconBox,
+.rightIconBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  color: var(--gray-400);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .leftIconBox {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: max-content;
-  z-index: 1;
+  left: 14px;
 }
 
 .rightIconBox {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: max-content;
-  z-index: 1;
+  right: 14px;
 }
 
-.inputBox ::-webkit-outer-spin-button,
-.inputBox ::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/*  Firefox  */
-.inputBox[type="number"] {
-  -moz-appearance: textfield;
-}
-
-/* Textarea styling */
+/* Textarea */
+.inputPassContainer .textareaBox,
 .textareaBox {
-  height: auto !important;
+  width: 100%;
+  height: auto;
   min-height: 120px;
-  padding: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-strong);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xs);
   resize: vertical;
-  font-family: inherit;
-  line-height: 1.5;
-}
-
-/* Form variant styling */
-.Container[data-variant="form"] .inputBox,
-.Container[data-variant="form"] .textareaBox {
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  transition: all 0.2s ease;
-}
-
-.Container[data-variant="form"] .inputBox:focus,
-.Container[data-variant="form"] .textareaBox:focus {
-  border-color: #6f42c1;
-  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
   outline: none;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 
-.Container[data-variant="form"] .labelText {
-  font-weight: 600;
-  color: #495057;
-  margin-bottom: 8px;
+.textareaBox:focus {
+  border-color: var(--brand-400);
+  box-shadow: var(--ring);
 }
 
-/* Tag input variant styling */
+.textareaBox::placeholder {
+  color: var(--gray-400);
+}
+
+/* Tag variant: pill input */
 .Container[data-variant="tag"] .inputBox {
-  border: 2px solid #e9ecef;
-  border-radius: 20px;
-  background: #ffffff;
-  height: 40px;
-  padding: 0 16px;
-}
-
-.Container[data-variant="tag"] .inputBox:focus {
-  border-color: #6f42c1;
-  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
-  outline: none;
-}
-
-@media (max-width: 991px) {
-  .labelText {
-    font-size: 14px;
-  }
-  .inputPassContainer input {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 576px) {
-  .labelText {
-    font-size: 14px;
-  }
-  .inputPassContainer input {
-    font-size: 14px;
-  }
-  .inputBox {
-    padding: 0 16px;
-  }
+  height: 38px;
+  border-radius: var(--radius-pill);
 }

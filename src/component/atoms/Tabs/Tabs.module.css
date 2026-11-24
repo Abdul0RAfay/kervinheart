@@ -1,34 +1,36 @@
+/* Segmented control */
 .tabsContainer {
-  display: flex;
-  gap: 8px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 4px;
   margin-bottom: 20px;
+  background: var(--gray-100);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
 }
 
 .tab {
-  padding: 4px 24px;
+  height: 34px;
+  padding: 0 16px;
   border: none;
-  background: #f8f9fa;
-  border-radius: 20px;
+  background: transparent;
+  border-radius: var(--radius-sm);
   font-size: 14px;
   font-weight: 500;
-  color: #6c757d;
+  color: var(--gray-500);
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid #e9ecef;
+  white-space: nowrap;
 }
 
 .tab:hover {
-  background: #e9ecef;
-  color: #495057;
+  color: var(--text-strong);
 }
 
-.activeTab {
-  background: #6f42c1;
-  color: white;
-  border-color: #6f42c1;
-}
-
+.activeTab,
 .activeTab:hover {
-  background: #6f42c1;
-  color: white;
+  background: var(--bg-surface);
+  color: var(--text-strong);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
 }

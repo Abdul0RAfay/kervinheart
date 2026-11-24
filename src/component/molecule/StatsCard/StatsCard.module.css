@@ -1,163 +1,101 @@
 .statsCard {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 140px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
 }
 
 .statsCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
-.cardContent {
+.top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}
-
-.leftSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  flex: 1;
+  gap: 12px;
 }
 
 .title {
   font-size: 14px;
   font-weight: 500;
-  color: #525268;
-  margin: 0;
-  line-height: 1.2;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--brand-50);
+  border: 1px solid var(--brand-100);
+}
+
+.icon {
+  font-size: 18px;
+  color: var(--brand-600);
 }
 
 .value {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
-  color: #2d3436;
-  margin: 0;
-  line-height: 1;
-  margin-top: 8px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
 }
 
 .changeSection {
   display: flex;
-  margin-top: auto;
-}
-
-.changeIndicator {
-  display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.arrowUp {
-  color: #00b894;
+.changePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 22px;
+  padding: 0 8px 0 6px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
-}
-
-.arrowDown {
-  color: #e17055;
-  font-size: 12px;
-}
-
-.changeText {
-  font-size: 14px;
   font-weight: 600;
 }
 
-.changeText.positive {
-  color: #00b894;
+.positive {
+  color: var(--success-700);
+  background: var(--success-50);
 }
 
-.changeText.negative {
-  color: #e17055;
+.negative {
+  color: var(--danger-700);
+  background: var(--danger-50);
 }
 
 .contextText {
   font-size: 12px;
-  color: #808080;
-  font-weight: 400;
-  margin-left: 5px; /* Align with the change text */
+  color: var(--text-subtle);
 }
 
-.rightSection {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  height: 100%;
-  padding-top: 4px;
-}
-
-.icon {
-  color: #525268;
-  font-size: 24px;
-  opacity: 0.8;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .statsCard {
-    padding: 20px;
-    height: 120px;
-  }
-
-  .value {
-    font-size: 28px;
-  }
-
-  .title {
-    font-size: 13px;
-  }
-
-  .changeText {
-    font-size: 13px;
-  }
-
-  .contextText {
-    font-size: 11px;
-  }
-
-  .icon {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
+@media (max-width: 576px) {
   .statsCard {
     padding: 16px;
-    height: 110px;
   }
-
   .value {
-    font-size: 24px;
-  }
-
-  .title {
-    font-size: 12px;
-  }
-
-  .changeText {
-    font-size: 12px;
-  }
-
-  .contextText {
-    font-size: 10px;
-  }
-
-  .icon {
-    font-size: 18px;
+    font-size: 26px;
   }
 }

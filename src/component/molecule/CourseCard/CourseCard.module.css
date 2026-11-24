@@ -1,7 +1,7 @@
 .courseCard {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
@@ -9,12 +9,11 @@
   display: flex;
   flex-direction: column;
   padding: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .courseCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .imageContainer {
@@ -28,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 
 .ratingOverlay {
@@ -36,23 +35,23 @@
   top: 12px;
   right: 12px;
   background: white;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 6px 8px;
   display: flex;
   align-items: center;
   gap: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xs);
 }
 
 .starIcon {
-  color: #ffc107;
+  color: var(--warning-500);
   font-size: 14px;
 }
 
 .ratingText {
   font-size: 12px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-strong);
 }
 
 .cardContent {
@@ -131,7 +130,7 @@
   color: var(--primary-color);
   opacity: 0.8;
   padding: 4px 8px;
-  border-radius: 6px;
+  border-radius: var(--radius-xs);
   font-size: 11px;
   font-weight: 500;
 }

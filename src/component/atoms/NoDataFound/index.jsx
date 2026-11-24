@@ -1,31 +1,23 @@
-import { IoSearchOutline } from "react-icons/io5";
+import { LuInbox } from "react-icons/lu";
 import classes from "./NoDataFound.module.css";
 import Button from "../Button";
 
 function NoDataFound({
-  text = "No Data Found",
+  text = "Nothing here yet",
   className,
   description,
   buttonText,
   buttonOnClick,
 }) {
   return (
-    <div
-      className={[classes.noDataContainer, className && className].join(" ")}
-    >
-      <IoSearchOutline
-        size={50}
-        color={"var(--white-color)"}
-        className={classes.icon}
-      />
-      <p className="fs-16">{text}</p>
-      {description && (
-        <p style={{ fontSize: "14px" }} className=" pb-3">
-          {description}
-        </p>
-      )}
+    <div className={[classes.noDataContainer, className].filter(Boolean).join(" ")}>
+      <span className={classes.iconWrap}>
+        <LuInbox className={classes.icon} aria-hidden="true" />
+      </span>
+      <p className={classes.title}>{text}</p>
+      {description && <p className={classes.description}>{description}</p>}
       {buttonText && (
-        <Button variant="primary" onClick={buttonOnClick}>
+        <Button variant="primary" onClick={buttonOnClick} customStyle={{ width: "auto" }}>
           {buttonText}
         </Button>
       )}

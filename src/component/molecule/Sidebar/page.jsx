@@ -1,51 +1,49 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { IoLogOutOutline } from "react-icons/io5";
-import { useDispatch, useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
+import { LuLogOut } from "react-icons/lu";
 import classes from "./Sidebar.module.css";
 import SidebarItem from "@/component/atoms/SidebarItem";
 import { adminSidebarData, sidebarData, utilitySidebarData } from "@/developmentContent/enum";
 
-const Sidebar = ({ isCollapsed }) => {
-  const dispatch = useDispatch();
-  const router = useRouter();
+const Sidebar = ({ onNavigate }) => {
+  const pathname = usePathname();
 
-  // Get user role from Redux or localStorage
-  // const user = useSelector((state) => state.auth.user);
-  const role = "admin";
-
-  // Filter sidebar items if needed
-  const filteredSidebarData =
-    role === "admin"
-      ? adminSidebarData // full access
-      : sidebarData
+  // TODO: derive from the authenticated user's role once auth is wired up
+  const role = pathname === "/user" || pathname?.startsWith("/user/") ? "user" : "admin";
+  const navItems = role === "admin" ? adminSidebarData : sidebarData;
 
   return (
-    <div className={classes?.Sidebar}>
-      <div className={classes?.sidebarItem}>
-        {filteredSidebarData.map((item) => (
-          <SidebarItem isCollapsed={isCollapsed} item={item} key={item._id} />
-        ))}
+    <nav className={classes.Sidebar} aria-label="Main navigation">
+      <div className={classes.section}>
+        <p className={classes.sectionLabel}>Menu</p>
+        <div className={classes.sidebarItem}>
+          {navItems.map((item) => (
+            <SidebarItem item={item} key={item._id} onNavigate={onNavigate} />
+          ))}
+        </div>
       </div>
 
-      <div className={classes?.separator}></div>
+      <div className={classes.footer}>
+        <div className={classes.utilityItems}>
+          {utilitySidebarData.map((item) => (
+            <SidebarItem item={item} key={item._id} onNavigate={onNavigate} />
+          ))}
+        </div>
 
-      <div className={classes?.utilityItems}>
-        {utilitySidebarData.map((item) => (
-          <SidebarItem isCollapsed={isCollapsed} item={item} key={item._id} />
-        ))}
-      </div>
+        <div className={classes.separator} />
 
-      <div
-        onClick={() => {
-          // your logout logic
-        }}
-        className={classes?.logout}
-      >
-        <IoLogOutOutline className={classes?.logoutIcon} />
-        <p>Logout</p>
+        <button
+          type="button"
+          onClick={() => {
+            // TODO: logout logic
+          }}
+          className={classes.logout}
+        >
+          <LuLogOut className={classes.logoutIcon} aria-hidden="true" />
+          <span>Log out</span>
+        </button>
       </div>
-    </div>
+    </nav>
   );
 };
 

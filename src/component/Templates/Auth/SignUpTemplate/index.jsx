@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AuthWrapper from "@/component/atoms/AuthWrapper";
 import classes from "./SignUpTemplate.module.css";
 import { useFormik } from "formik";
@@ -44,7 +45,7 @@ const SignUpTemplate = () => {
     >
       <div className={classes.signupCard}>
         <form onSubmit={signupFormik.handleSubmit} className={classes.signupForm}>
-          <h2 className={mergeClass("fs-50 fw-600", classes.formTitle)}>Sign Up</h2>
+          <h2 className={classes.formTitle}>Sign Up</h2>
           
           <div className={classes.inputGroup}>
             <Input
@@ -137,9 +138,9 @@ const SignUpTemplate = () => {
           <div className={classes.loginLink}>
             <p>
               Already have an account?{" "}
-              <span className={classes.loginText}>
+              <Link href="/" className={classes.loginText}>
                 Log in here
-              </span>
+              </Link>
             </p>
           </div>
         </form>

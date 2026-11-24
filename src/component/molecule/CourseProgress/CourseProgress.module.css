@@ -1,98 +1,106 @@
 .courseProgress {
-  background: white;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 24px;
-  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.caption {
+  font-size: 12px;
+  color: var(--text-subtle);
 }
 
 .progressContainer {
   display: flex;
   align-items: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .donutChart {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-}
-
-.chart {
-  /* Remove transform as it's handled in the SVG transform attribute */
+  display: flex;
 }
 
 .percentageText {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 32px;
-  font-weight: 800;
-  color: #6c5ce7;
-  letter-spacing: -1px;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
 }
 
-.completionText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, calc(-50% + 20px));
-  font-size: 12px;
-  color: #a29bfe;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: -0.2px;
-  line-height: 1;
+.percentageText span {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+}
+
+.percentageText small {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
 }
 
 .legend {
+  list-style: none;
+  flex: 1;
+  min-width: 140px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  flex: 1;
+  gap: 4px;
 }
 
 .legendItem {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  background: linear-gradient(90deg, #e8eaff 0%, #fcfeff 100%);
-
-  border-radius: 12px;
-  border: 1px solid #f0f0f0;
-  transition: all 0.2s ease;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--dur) var(--ease);
 }
 
 .legendItem:hover {
-  background: #f5f5f5;
-  border-color: #e0e0e0;
+  background: var(--gray-50);
 }
 
 .legendColor {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .legendLabel {
-  font-size: 14px;
-  color: #333;
   flex: 1;
-  font-weight: 500;
-  letter-spacing: -0.2px;
+  font-size: 13px;
+  color: var(--gray-600);
 }
 
 .legendPercentage {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: -0.2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
 }

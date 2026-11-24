@@ -1,8 +1,9 @@
 .verifyOTPCard {
   background: white;
-  border-radius: 20px;
-  box-shadow: 0px 14px 54px 10px #9fb3d999;
-  padding: 3rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-xs);
+  padding: 40px;
   width: 100%;
   max-width: 450px;
 }
@@ -14,7 +15,7 @@
 }
 
 .formTitle {
-  color: #444374;
+  color: var(--text-strong);
   text-align: center;
 }
 
@@ -25,7 +26,7 @@
 
 .descriptionText p {
   font-size: 0.95rem;
-  color: #585788;
+  color: var(--gray-600);
   line-height: 1.5;
   margin: 0;
 }
@@ -38,14 +39,15 @@
 }
 
 .otpInput {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
+  width: 48px;
+  height: 52px;
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-xs);
+  border-radius: var(--radius-sm);
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #444374;
+  color: var(--text-strong);
   background: white;
   transition: all 0.2s ease;
 }
@@ -53,15 +55,16 @@
 .otpInput:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(68, 67, 116, 0.1);
+  box-shadow: var(--ring);
 }
 
 .otpInput:not(:placeholder-shown) {
-  border-color: var(--accent-color);
+  border-color: var(--brand-300);
+  background: var(--brand-25);
 }
 
 .errorText {
-  color: #ef4444;
+  color: var(--danger-500);
   font-size: 0.9rem;
   text-align: center;
   margin: 0;
@@ -80,11 +83,11 @@
 }
 
 .resendText:hover {
-  color: #444374;
+  color: var(--text-strong);
 }
 
 .timerText {
-  color: #9ca3af;
+  color: var(--gray-400);
   font-size: 0.9rem;
 }
 
@@ -94,7 +97,7 @@
 
 .backToLogin p {
   font-size: 0.9rem;
-  color: #585788;
+  color: var(--gray-600);
   margin: 0;
 }
 
@@ -107,7 +110,7 @@
 }
 
 .loginText:hover {
-  color: #444374;
+  color: var(--text-strong);
 }
 
 @media (max-width: 768px) {
@@ -154,4 +157,47 @@
     height: 35px;
     font-size: 0.9rem;
   }
+}
+
+/* ---- Refined typography & links ---- */
+.formTitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-strong);
+}
+
+.descriptionText p {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.loginText,
+.signupText,
+.forgotPassword,
+.termsLink,
+.resendText {
+  color: var(--brand-600);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.loginText:hover,
+.signupText:hover,
+.forgotPassword:hover,
+.termsLink:hover,
+.resendText:hover {
+  color: var(--brand-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.separatorText {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }

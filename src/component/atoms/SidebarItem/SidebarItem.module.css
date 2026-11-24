@@ -1,55 +1,61 @@
 .item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
-  cursor: pointer;
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  color: var(--gray-600);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
 .item:hover {
-  background-color: var(--light-purple);
-}
-
-.item p {
-  color: var(--dark-purple);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  margin-bottom: 0px;
+  background-color: var(--gray-100);
+  color: var(--text-strong);
 }
 
 .icon {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--gray-400);
+  stroke-width: 2;
+  transition: color var(--dur) var(--ease);
 }
 
-/* .icon{
-    font-size: 22px;
-    color: var(--gray-color);
-    opacity: 0.7;
-} */
-
-.active {
-  background-color: var(--light-purple) !important;
-  border-left: 4px solid var(--dark-purple);
-  border-radius: 8px 0 0 8px;
-  margin-left: 0;
-  padding-left: 12px;
+.item:hover .icon {
+  color: var(--gray-600);
 }
 
-.active p {
-  color: var(--dark-purple);
-  opacity: 1;
-  font-weight: 500;
+.label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.active .icon {
-  color: var(--white-color);
-  opacity: 1;
+
+.active,
+.active:hover {
+  background-color: var(--brand-50);
+  color: var(--brand-700);
+  font-weight: 600;
+}
+
+.active .icon,
+.active:hover .icon {
+  color: var(--brand-600);
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--brand-600);
 }

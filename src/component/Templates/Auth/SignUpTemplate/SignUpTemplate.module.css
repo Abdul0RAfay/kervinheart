@@ -1,8 +1,9 @@
 .signupCard {
   background: white;
-  border-radius: 20px;
-  box-shadow: 0px 14px 54px 10px #9fb3d999;
-  padding: 3rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-xs);
+  padding: 40px;
   width: 100%;
   max-width: 450px;
 }
@@ -14,7 +15,7 @@
 }
 
 .formTitle {
-  color: #444374;
+  color: var(--text-strong);
   text-align: center;
 }
 
@@ -41,7 +42,7 @@
 
 .checkboxLabel {
   font-size: 0.9rem;
-  color: #585788;
+  color: var(--gray-600);
   cursor: pointer;
   line-height: 1.4;
 }
@@ -54,7 +55,7 @@
 }
 
 .termsLink:hover {
-  color: #444374;
+  color: var(--text-strong);
 }
 
 .separator {
@@ -69,14 +70,14 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: #e5e7eb;
+  background: var(--border-default);
   z-index: 1;
 }
 
 .separatorText {
   background: white;
   padding: 0 1rem;
-  color: #9ca3af;
+  color: var(--gray-400);
   font-size: 0.9rem;
   position: relative;
   z-index: 2;
@@ -88,7 +89,7 @@
 
 .loginLink p {
   font-size: 0.9rem;
-  color: #585788;
+  color: var(--gray-600);
   margin: 0;
 }
 
@@ -101,7 +102,7 @@
 }
 
 .loginText:hover {
-  color: #444374;
+  color: var(--text-strong);
 }
 
 @media (max-width: 768px) {
@@ -127,4 +128,47 @@
     align-items: start;
     gap: 10px;
   }
+}
+
+/* ---- Refined typography & links ---- */
+.formTitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-strong);
+}
+
+.descriptionText p {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.loginText,
+.signupText,
+.forgotPassword,
+.termsLink,
+.resendText {
+  color: var(--brand-600);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.loginText:hover,
+.signupText:hover,
+.forgotPassword:hover,
+.termsLink:hover,
+.resendText:hover {
+  color: var(--brand-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.separatorText {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }

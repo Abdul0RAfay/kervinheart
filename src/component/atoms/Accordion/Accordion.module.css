@@ -3,16 +3,16 @@
 }
 
 .accordionItem {
-  background: #f8f9fa;
-  border-radius: 12px;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
   margin-bottom: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
+  border: 1px solid var(--border-default);
 }
 
 .accordionItem:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .accordionHeader {
@@ -25,7 +25,7 @@
 }
 
 .accordionHeader:hover {
-  background-color: #f1f3f4;
+  background-color: var(--gray-100);
 }
 
 .accordionHeaderContent {
@@ -38,7 +38,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  background: linear-gradient(135deg, var(--brand-500), #a855f7);
   color: white;
   display: flex;
   align-items: center;
@@ -56,20 +56,20 @@
 .accordionTitle {
   font-size: 18px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-strong);
   margin: 0 0 4px 0;
   line-height: 1.4;
 }
 
 .accordionSubtitle {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--gray-500);
   margin: 0;
   font-weight: 500;
 }
 
 .accordionChevron {
-  color: #6b7280;
+  color: var(--gray-500);
   font-size: 16px;
   transition: transform 0.3s ease;
   flex-shrink: 0;
@@ -82,12 +82,12 @@
 .accordionContent {
   padding: 0 24px 24px 24px;
   background: white;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid var(--border-default);
 }
 
 .accordionDescription {
   font-size: 14px;
-  color: #4b5563;
+  color: var(--gray-600);
   line-height: 1.6;
   margin: 16px 0;
 }
@@ -100,7 +100,7 @@
   display: flex;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid var(--gray-100);
 }
 
 .lessonItem:last-child {
@@ -111,8 +111,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #f3f4f6;
-  color: #6b7280;
+  background: var(--gray-100);
+  color: var(--gray-500);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,13 +132,13 @@
 .lessonTitle {
   font-size: 14px;
   font-weight: 500;
-  color: #374151;
+  color: var(--gray-700);
   margin: 0;
 }
 
 .lessonDuration {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--gray-400);
   font-weight: 500;
 }
 

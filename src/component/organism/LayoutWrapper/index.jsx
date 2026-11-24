@@ -1,42 +1,53 @@
 "use client";
 import Header from "@/component/molecule/Header";
 import Sidebar from "@/component/molecule/Sidebar/page";
-import { mergeClass } from "@/resources/utils/helper";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { LuX } from "react-icons/lu";
 import classes from "./LayoutWrapper.module.css";
 
 const LayoutWrapper = ({ children }) => {
-  const router = useRouter();
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // close the mobile drawer whenever the route changes
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
   return (
-    <>
-      <div className={classes.child}>
-        <div className={classes?.subChild}>
-            <div
-              className={`${classes?.sidebar} `}
-            >
-              <div className={classes?.logoParent}>
-                <div
-                  className={mergeClass("cp", classes?.logo)}
-                  onClick={() => router.push("/")}
-                >
-                  <Image fill src={"/images/app-images/Logo.png"} alt="logo" />
-                </div>
-                
-              </div>
-              <Sidebar/>
-            </div>
-          <div className={classes?.children}>
-            <Header />
-            <div className={classes?.contentBody}>
-            {children}
-            </div>
-          </div>
+    <div className={classes.shell}>
+      <aside className={`${classes.sidebar} ${mobileOpen ? classes.sidebarOpen : ""}`}>
+        <div className={classes.brandRow}>
+          <Link href="/" className={classes.brand}>
+            <span className={classes.logo}>
+              <Image fill sizes="36px" src="/images/app-images/Logo.png" alt="" />
+            </span>
+            <span className={classes.brandName}>Kervin Heart</span>
+          </Link>
+          <button
+            type="button"
+            className={classes.closeBtn}
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <LuX />
+          </button>
         </div>
+        <Sidebar onNavigate={() => setMobileOpen(false)} />
+      </aside>
+
+      {mobileOpen && (
+        <div className={classes.backdrop} onClick={() => setMobileOpen(false)} aria-hidden="true" />
+      )}
+
+      <div className={classes.main}>
+        <Header onMenuClick={() => setMobileOpen(true)} />
+        <main className={classes.contentBody}>{children}</main>
       </div>
-    </>
+    </div>
   );
 };
 

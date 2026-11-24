@@ -6,13 +6,13 @@
 .sectionTitle {
   font-size: 14px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-strong);
   margin-bottom: 30px;
 }
 
 .bookingSection {
   margin-top: 24px;
   padding: 20px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--border-default);
   background-color: white;
 }

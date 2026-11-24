@@ -1,36 +1,49 @@
 "use client";
 import HeaderRight from "@/component/atoms/HeaderRight/page";
-import classes from "./Header.module.css";
+import { pageSubtitles } from "@/developmentContent/enum";
 import { usePathname } from "next/navigation";
-import { mergeClass } from "@/resources/utils/helper";
+import { LuMenu } from "react-icons/lu";
+import classes from "./Header.module.css";
 
-const formatPathname = (path) => {
-
-  // Handle dashboard path specifically
-  if (path === "/dashboard") {
-    return "Welcome Back, User";
-  }
-
-  const firstPart = path.split("/")[1];
-
-  const formatted = firstPart
+const toTitle = (segment = "") =>
+  segment
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  return formatted;
+const getHeading = (path = "") => {
+  const segments = path.split("/").filter(Boolean);
+  // "/user/journal" -> "journal", "/users" -> "users"
+  const key = segments[0] === "user" ? segments[1] || "dashboard" : segments[0] || "dashboard";
+
+  if (key === "dashboard") {
+    return { title: "Welcome back, User", subtitle: pageSubtitles.dashboard };
+  }
+  return { title: toTitle(key), subtitle: pageSubtitles[key] };
 };
 
-const Header = () => {
+const Header = ({ onMenuClick }) => {
   const pathname = usePathname();
-  console.log("🚀 ~ Header ~ pathname888:", pathname);
-  const displayText = formatPathname(pathname);
+  const { title, subtitle } = getHeading(pathname);
 
   return (
-    <div className={classes?.header}>
-      <div className={mergeClass("fs-40 fw-700",classes?.greet)}>{displayText }</div>
+    <header className={classes.header}>
+      <div className={classes.left}>
+        <button
+          type="button"
+          className={classes.menuBtn}
+          onClick={onMenuClick}
+          aria-label="Open menu"
+        >
+          <LuMenu />
+        </button>
+        <div className={classes.titles}>
+          <h1 className={classes.title}>{title}</h1>
+          {subtitle && <p className={classes.subtitle}>{subtitle}</p>}
+        </div>
+      </div>
       <HeaderRight />
-    </div>
+    </header>
   );
 };
 

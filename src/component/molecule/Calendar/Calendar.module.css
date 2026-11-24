@@ -5,7 +5,7 @@
 .calendarTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--text-strong);
   margin-bottom: 16px;
   margin-top: 0;
 }
@@ -17,9 +17,9 @@
 }
 
 .dateButton {
-  background: #fafaff;
-  border: 1px solid #fafaff;
-  border-radius: 8px;
+  background: var(--brand-25);
+  border: 1px solid var(--brand-25);
+  border-radius: var(--radius-sm);
   padding: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -31,30 +31,30 @@
 }
 
 .dateButton:hover {
-  border-color: #4a5568;
-  background-color: #f7fafc;
+  border-color: var(--gray-600);
+  background-color: var(--gray-50);
 }
 
 .dateButton.selected {
-  background: linear-gradient(90deg, #5e5ccc 0%, #9694e5 100%);
+  background: linear-gradient(90deg, var(--brand-600) 0%, var(--brand-400) 100%);
   color: white;
 }
 
 .month {
   font-size: 12px;
   font-weight: 600;
-  color: #718096;
+  color: var(--gray-500);
   margin-bottom: 2px;
 }
 
 .dateButton.selected .month {
-  color: #e2e8f0;
+  color: var(--border-default);
 }
 
 .day {
   font-size: 18px;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--text-strong);
   margin-bottom: 2px;
 }
 
@@ -65,13 +65,13 @@
 .dayName {
   font-size: 11px;
   font-weight: 500;
-  color: #718096;
+  color: var(--gray-500);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .dateButton.selected .dayName {
-  color: #e2e8f0;
+  color: var(--border-default);
 }
 
 /* Responsive design */

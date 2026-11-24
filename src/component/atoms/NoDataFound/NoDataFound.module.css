@@ -4,11 +4,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 6px;
+  padding: 40px 16px;
+  text-align: center;
 }
 
-.noDataContainer p {
-  color: var(--white-color);
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 400;
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  border-radius: var(--radius-md);
+  background: var(--brand-50);
+  border: 1px solid var(--brand-100);
+}
+
+.icon {
+  font-size: 22px;
+  color: var(--brand-600);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.description {
+  max-width: 340px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px !important;
 }

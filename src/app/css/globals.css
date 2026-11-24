@@ -1,15 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* ==========================================================================
+   Global base — typography, resets, scrollbars, Bootstrap/MUI harmonising
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
-  font-family: "Inter", sans-serif;
-  /* background: #F4F5FA; */
-  background: #f4f5fa;
-  color: var(--primary-color);
+  font-family: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  background: var(--bg-app);
+  color: var(--text-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 * {
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -28,111 +39,226 @@ span {
   padding: 0;
 }
 
-.maxLine1 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-strong);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
-.maxLine2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
+a {
+  color: var(--brand-600);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
 }
+
+a:hover {
+  color: var(--brand-700);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--brand-100);
+  color: var(--brand-900);
+}
+
+/* ---- Utilities ---- */
+.maxLine1,
+.maxLine2,
 .maxLine3 {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
-/* scroll bar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 5px;
+.maxLine1 {
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
 }
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.16);
-  /* margin: 100px 0px; */
+.maxLine2 {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
-::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 10px;
+.maxLine3 {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
-
-/* scroll bar */
 
 .op-05 {
   opacity: 0.5;
 }
-
 .op-08 {
   opacity: 0.8;
 }
 
-/* color class */
 .primary-color {
-  color: var(--primary-color);
+  color: var(--text-strong);
 }
-
 .text-color {
-  color: var(--text-color);
+  color: var(--text-muted);
 }
-
 .white-color {
   color: var(--white-color);
 }
-
 .black-color {
-  color: var(--black-color);
+  color: var(--text-strong);
 }
-
 .accent-color {
-  color: var(--accent-color);
+  color: var(--brand-600);
 }
-
 .error-color {
-  color: var(--error-v1);
+  color: var(--danger-500);
 }
 
 .wbbw {
   word-break: break-word;
 }
-
 .t-t-c {
   text-transform: capitalize;
 }
-
-.c-p {
-  cursor: pointer;
-}
-
-.box-shadow {
-  box-shadow: 0px 14px 54px 10px #9fb3d999;
-}
-
-.cursor {
-  cursor: pointer;
-}
-
+.c-p,
+.cursor,
 .cp {
   cursor: pointer;
 }
 
-/* Chrome, Safari, Edge, Opera */
+.box-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* Shared surface helper */
+.surface {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+/* ---- Scrollbars ---- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+  background-clip: content-box;
+}
+
+/* ---- Number inputs ---- */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ---- Bootstrap harmonising ---- */
+.form-control,
+.form-select {
+  border-color: var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-strong);
+  font-size: 14px;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand-400);
+  box-shadow: var(--ring);
+}
+.form-check-input:checked {
+  background-color: var(--brand-600);
+  border-color: var(--brand-600);
+}
+.form-check-input:focus {
+  box-shadow: var(--ring);
+  border-color: var(--brand-400);
+}
+.modal-content {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+.modal-header,
+.modal-footer {
+  border-color: var(--border-subtle);
+}
+.modal-backdrop.show {
+  opacity: 0.4;
+}
+.dropdown-menu {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+}
+.dropdown-item {
+  border-radius: var(--radius-xs);
+  font-size: 14px;
+  padding: 8px 12px;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  background: var(--brand-50);
+  color: var(--brand-700);
+}
+.progress {
+  background: var(--gray-100);
+  border-radius: var(--radius-pill);
+}
+.progress-bar {
+  background: var(--brand-600);
+}
+
+/* ---- Toastify harmonising ---- */
+.Toastify__toast {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-strong);
+}
+
+/* ---- Accessibility ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
